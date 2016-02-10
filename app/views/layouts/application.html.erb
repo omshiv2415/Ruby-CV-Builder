@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Ruby" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "ABC Bank" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -37,7 +37,6 @@
     <![endif]-->
   </head>
   <body>
-
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -45,41 +44,66 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Ruby</a>
+        <a class="navbar-brand" href="#"></a><br/>
+
+        <%= link_to "Ruby CV Builder", root_path, class: "navbar-brand", id: "logo" %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+						<% if logged_in? and not current_user.try(:admin?) %>
+						<% if current_user %>
+                 <li><%= "#" %></li>
+	               <li><%= "#" %></li>
+              <% end %>
+						<% elsif current_user.try(:admin?) %>
+
+            <% end %>
           </ul>
+					<ul class="nav navbar-right col-md-4">
+					<% if current_user.try(:admin?) %>
+					<li class="col-md-8 user-name">
+					<%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+					edit_user_registration_path, title: 'Edit Profile' %>
+				 <h6 align="left|justify"style="color:white">Logged in as Admin</h6>
+				 <h6 align="left|justify"style="color:white"> Last Logged in <%= current_user.last_sign_in_at.strftime("%d %b %Y %H:%M:%S") %></h6>
+				 <h6 align="left|justify"style="color:white">Logged in <%= current_user.sign_in_count %> times </h6>
+					</li>
+					<li class="col-md-1"> </li>
+					<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
+					class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %>
+					<% elsif current_user %>
+					<li class="col-md-8 user-name">
+
+					<%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+					edit_user_registration_path, title: 'Edit Profile' %>
+					<h6 align="left|justify"style="color:white"><%= @username %></h6>
+				  <h6 align="left|justify"style="color:white"> Last Logged in: <%= current_user.last_sign_in_at.strftime("%d %b %Y %H:%M:%S") %></h6>
+				  <h6 align="left|justify"style="color:white">Logged in: <%= current_user.sign_in_count %> times </h6>
+					</li>
+					<li class="col-md-1"> </li>
+					<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
+					class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %>
+
+					<% else %>
+					<li class="col-md-4 pull-right">
+					<%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+					</li>
+					<% end %>
+					</ul>
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2016</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+       </div><!--/row-->
+      </div> <!-- /container -->
+		 <div class="footer navbar-fixed-bottom secondary">
+     <p align="center" style="color:white;"> MSc Software Engineering Kingston University Software Architecture and Programming Models &copy; Viralkumar Patel 2016</p>
+    </div>
   </body>
+
 </html>
+
