@@ -3,17 +3,11 @@
     <%= render 'accounts/account', obj: @accounts %>
 <% elsif current_user%>
 
-    <h2 align="center">Welcome to the ABC Bank Internet Banking</h2>
-    <h2 align="center">Please wait for the Account Setup and visit our nearest branch</h2>
-    <h3 align="center">Documents List </h3> <br/><br/>
-		<h4 align="center">1. Photo Id (Passport, Driving Licence)</h4>
-		<h4 align="center">2. Address Proof (Utility Bill Phone bill, Gas bill, Water bill)</h4>
-		<h4 align="center">3. Two Photographs (50X50 cm)</h4>
 
 
 <% else %>
 <div class="center jumbotron">
-<h2 align="center">Welcome to the ABC Bank Internet Banking</h2>
+<h2 align="center">Welcome to the Ruby CV Builder</h2>
 <br><br><br><br>
 <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %> <br/>
 	<br><br><br><br><br>
