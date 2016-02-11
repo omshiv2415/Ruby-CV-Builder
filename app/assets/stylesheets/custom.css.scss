@@ -9,46 +9,191 @@ text-transform: uppercase;
 letter-spacing: -1px;
 font-weight: bold;
 }
-#logo:hover {
-color: #fff;
-text-decoration: none;
+#logo{
+
+  flot:left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+	margin-top: 2px;
+
 }
-.center {
-text-align: center;
+table.table-bordered
+{
+	border:1px solid green;
+}
+table.table-striped {
+border:1px solid green;
+}
+.image_tag{
+	margin-left: 15px;
+}
+#navbar-fixed-bottom{
+
+	background-size: cover;
+}
+.form-group{
+	margin-left: 5px;
+	margin-right: 5px;
+
+}
+#bs-example-navbar-collapse-1{
+	flot:left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+}
+#logo:hover{
+  color: #01A9DB;
+  text-decoration: none;
+
+}
+.align{
+
+}
+.center{
+  text-align: center;
+	image-align: center;
+
+}
+.panel {
+		margin-top: 40px;
 }
 .jumbotron {
-background-image: asset-url('new_cover_page.png');
-background-size: cover;
-height: 550px;
+  background-image: asset-url('new_cover_page.jpg');
+  background-size: cover;
+  height: 450px;
+  margin-top: 30px;
+}
+
+.nav{
+	margin-top: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+.user-name {
+padding: 0 !important ;
+padding-left: 5px;
+padding-top: 7px !important;
+text-align: center;
+a {
+color: black !important;
+margin: 0 !important;
+padding: 5px!important;
+}
+a:hover, a:focus {
+color: #000 !important;
+}
+}
+.panel-body{
+	margin-top: 15px;
+}
+.logout {
+padding-left: 0;
+}
+.nav.navbar-right {
+padding-bottom: 10px;
+padding-top: 5px;
+}
+.nav.navbar-nav {
+.navbar-link {
+border-radius: 5px;
+color: #fff;
+margin-top: 15px;
+padding: 8px;
+}
+.navbar-link:focus, .navbar-link:hover {
+background: #3071a9;
+color: #fff;
+}
+
+li a {
+margin-right: 5px;
+
+}
+	li a {
+		color: #fff;
+	}
+}
+
+.nav.navbar-right li {
+.btn {
+color: #fff !important;
+margin-top: 5%;
+}
+.btn-danger:hover, .btn-danger:focus {
+background-color: darken(#d9534f,20%) !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+background-color: darken(#428bca,20%) !important;
+}
+}
+.btn-primary:visited, .btn-danger:visited {
+color: #fff;
 }
 .jumbotron h1 {
-color: #fff;
-text-align: center;
-margin-bottom: 30px;
-letter-spacing: -1px;
-font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+
 }
 .btn-xlarge {
-font-size: 1.7em;
-background-color: black;
+  font-size: 1.7em;
+  background-color:black;
+
 }
-footer {
-margin-top: 45px;
-padding-top: 5px;
+.footer {
+	background-color:black;
+  margin-top: 105px;
+  padding-top: 5px;
+  border-top: 2px solid #eaeaea;
+}
+.footer a:hover{
+  color: #01A9DB;
+}
+.footer p:hover{
+  color: #01A9DB;
+}
+.footer small {
+  float: left;
+}
+.footer ul{
+  float: right;
+  list-style: none;
+}
+.footer ul li{
+  float: left;
+  margin-left: 15px;
+
+}
+.article-action{
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+
+}
+
+.article-meta-details {
 border-top: 1px solid #eaeaea;
-color: #777;
+margin-top: 15px;
 }
-footer a:hover {
-color: #222;
+.description{
+  margin-top: 0;
 }
-footer small {
-float: left;
-}
-footer ul {
-float: right;
-list-style: none;
-}
-footer ul li {
-float: left;
-margin-left: 15px;
+body {
+     margin: 0;
+
+     background-size: auto;
+     background-repeat:no-repeat;
+     display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

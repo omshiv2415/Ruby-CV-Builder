@@ -1,13 +1,12 @@
 <% if current_user.try(:admin?) %>
 <h3 align="center">ABC Bank's Total Number of Accounts: <%= @accounts.count %></h3>
-    <%= render 'accounts/account', obj: @accounts %>
-<% elsif current_user%>
 
+<% elsif current_user%>
 
 
 <% else %>
 <div class="center jumbotron">
-<h2 align="center">Welcome to the Ruby CV Builder</h2>
+<h2 align="center"style="color:white">Welcome to the Ruby CV Builder</h2>
 <br><br><br><br>
 <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %> <br/>
 	<br><br><br><br><br>
