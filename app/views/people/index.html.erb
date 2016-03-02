@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Forename1</th>
+      <th>Forename2</th>
+      <th>Surname</th>
+      <th>Addressline1</th>
+      <th>Addressline2</th>
+      <th>Town</th>
+      <th>Postcode</th>
+      <th>Secondemail</th>
+      <th>Personalurl</th>
+      <th>Photo</th>
+      <th>Female</th>
+      <th>Postcodestart</th>
+      <th>Authoritytoworkstatement</th>
+      <th>Contactpreference</th>
+      <th>Educationallevels ideducatonlevel</th>
+      <th>Noofgcses</th>
+      <th>Gecseenglishgrade</th>
+      <th>Gcsemathsgrade</th>
+      <th>Fiveormoregcses</th>
+      <th>Noofalevels</th>
+      <th>Ucaspoints</th>
+      <th>Studentstatus</th>
+      <th>Mobile</th>
+      <th>Landline</th>
+      <th>Dob</th>
+      <th>Penaltypoints</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.title %></td>
+        <td><%= person.forename1 %></td>
+        <td><%= person.forename2 %></td>
+        <td><%= person.surname %></td>
+        <td><%= person.addressLine1 %></td>
+        <td><%= person.addressLine2 %></td>
+        <td><%= person.town %></td>
+        <td><%= person.postcode %></td>
+        <td><%= person.secondEmail %></td>
+        <td><%= person.personalUrl %></td>
+        <td><%= person.photo %></td>
+        <td><%= person.female %></td>
+        <td><%= person.postcodeStart %></td>
+        <td><%= person.authorityToWorkStatement %></td>
+        <td><%= person.contactPreference %></td>
+        <td><%= person.EducationalLevels_idEducatonLevel %></td>
+        <td><%= person.noOfGcses %></td>
+        <td><%= person.gecseEnglishGrade %></td>
+        <td><%= person.gcseMathsGrade %></td>
+        <td><%= person.fiveOrMoreGcses %></td>
+        <td><%= person.noOfAlevels %></td>
+        <td><%= person.ucasPoints %></td>
+        <td><%= person.studentStatus %></td>
+        <td><%= person.mobile %></td>
+        <td><%= person.landline %></td>
+        <td><%= person.dob %></td>
+        <td><%= person.penaltyPoints %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person', new_person_path %>

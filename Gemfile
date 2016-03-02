@@ -1,12 +1,16 @@
 source 'https://rubygems.org'
-
+gem "mini_magick"
+gem 'carrierwave'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
-
+gem 'wicked_pdf'
+gem "paperclip", "~> 4.3"
+gem 'wkhtmltopdf-binary'
+gem 'rails-jcarousel'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

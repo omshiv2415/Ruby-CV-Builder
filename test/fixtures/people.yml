@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  forename1: MyString
+  forename2: MyString
+  surname: MyString
+  addressLine1: MyString
+  addressLine2: MyString
+  town: MyString
+  postcode: MyString
+  secondEmail: 
+  personalUrl: 
+  photo: 
+  female: MyString
+  postcodeStart: MyString
+  authorityToWorkStatement: MyString
+  contactPreference: MyString
+  EducationalLevels_idEducatonLevel: 1
+  noOfGcses: 1
+  gecseEnglishGrade: MyString
+  gcseMathsGrade: MyString
+  fiveOrMoreGcses: 1
+  noOfAlevels: 1
+  ucasPoints: 1
+  studentStatus: MyString
+  mobile: MyString
+  landline: MyString
+  dob: 2016-02-13
+  penaltyPoints: 1
+
+two:
+  title: MyString
+  forename1: MyString
+  forename2: MyString
+  surname: MyString
+  addressLine1: MyString
+  addressLine2: MyString
+  town: MyString
+  postcode: MyString
+  secondEmail: 
+  personalUrl: 
+  photo: 
+  female: MyString
+  postcodeStart: MyString
+  authorityToWorkStatement: MyString
+  contactPreference: MyString
+  EducationalLevels_idEducatonLevel: 1
+  noOfGcses: 1
+  gecseEnglishGrade: MyString
+  gcseMathsGrade: MyString
+  fiveOrMoreGcses: 1
+  noOfAlevels: 1
+  ucasPoints: 1
+  studentStatus: MyString
+  mobile: MyString
+  landline: MyString
+  dob: 2016-02-13
+  penaltyPoints: 1

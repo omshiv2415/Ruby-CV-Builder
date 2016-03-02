@@ -1,0 +1,139 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @person.title %>
+</p>
+
+<p>
+  <strong>Forename1:</strong>
+  <%= @person.forename1 %>
+</p>
+
+<p>
+  <strong>Forename2:</strong>
+  <%= @person.forename2 %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @person.surname %>
+</p>
+
+<p>
+  <strong>Addressline1:</strong>
+  <%= @person.addressLine1 %>
+</p>
+
+<p>
+  <strong>Addressline2:</strong>
+  <%= @person.addressLine2 %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @person.town %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @person.postcode %>
+</p>
+
+<p>
+  <strong>Secondemail:</strong>
+  <%= @person.secondEmail %>
+</p>
+
+<p>
+  <strong>Personalurl:</strong>
+  <%= @person.personalUrl %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag(@person.photo) %>
+</p>
+
+<p>
+  <strong>Female:</strong>
+  <%= @person.female %>
+</p>
+
+<p>
+  <strong>Postcodestart:</strong>
+  <%= @person.postcodeStart %>
+</p>
+
+<p>
+  <strong>Authoritytoworkstatement:</strong>
+  <%= @person.authorityToWorkStatement %>
+</p>
+
+<p>
+  <strong>Contactpreference:</strong>
+  <%= @person.contactPreference %>
+</p>
+
+<p>
+  <strong>Educationallevels ideducatonlevel:</strong>
+  <%= @person.EducationalLevels_idEducatonLevel %>
+</p>
+
+<p>
+  <strong>Noofgcses:</strong>
+  <%= @person.noOfGcses %>
+</p>
+
+<p>
+  <strong>Gecseenglishgrade:</strong>
+  <%= @person.gecseEnglishGrade %>
+</p>
+
+<p>
+  <strong>Gcsemathsgrade:</strong>
+  <%= @person.gcseMathsGrade %>
+</p>
+
+<p>
+  <strong>Fiveormoregcses:</strong>
+  <%= @person.fiveOrMoreGcses %>
+</p>
+
+<p>
+  <strong>Noofalevels:</strong>
+  <%= @person.noOfAlevels %>
+</p>
+
+<p>
+  <strong>Ucaspoints:</strong>
+  <%= @person.ucasPoints %>
+</p>
+
+<p>
+  <strong>Studentstatus:</strong>
+  <%= @person.studentStatus %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @person.mobile %>
+</p>
+
+<p>
+  <strong>Landline:</strong>
+  <%= @person.landline %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @person.dob %>
+</p>
+
+<p>
+  <strong>Penaltypoints:</strong>
+  <%= @person.penaltyPoints %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

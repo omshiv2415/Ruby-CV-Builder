@@ -1,0 +1,122 @@
+<%= render 'shared/errors', obj:@person %>
+<div class='row'>
+  <%= form_for(@person, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="col-md-12 col-md-offset-0" >
+   <div class="panel panel-default">
+	  <div class="panel-heading">
+     <h4 align="center"><%= t('.sign_in', :default => "Personal Deatails") %></h4>
+
+	<div class="panel-body">
+  <div class="form-group">
+    <%= f.label :Title %><br>
+    <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Forename %><br>
+    <%= f.text_field :forename1 , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Middle_Name %><br>
+    <%= f.text_field :forename2 , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :Address_Line1 %><br>
+    <%= f.text_field :addressLine1 , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Address_Line2 %><br>
+    <%= f.text_field :addressLine2, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Town %><br>
+    <%= f.text_field :town , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Postcode %><br>
+    <%= f.text_field :postcode , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :Second_Email %><br>
+    <%= f.text_field :secondEmail , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :Personal_website_Url %><br>
+    <%= f.text_field :personalUrl , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Photo_Upload %><br>
+    <%= f.file_field :photo , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Gender %><br>
+    <%= f.select :female, options_for_select([['Male'],['Female']], params[:gender]),{}, { class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :PostcodeStart %><br>
+    <%= f.text_field :postcodeStart , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Authority_To_Work_Statement %><br>
+    <%= f.text_field :authorityToWorkStatement , class: "form-control" %>
+   </div>
+  <div class="form-group">
+    <%= f.label :Contact_Preference %><br>
+    <%= f.select :contactPreference, options_for_select([['Part-time'],['Full-Time'],['Contract']], params[:gender]),{}, { class: "form-control"} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Educational_Levels %><br>
+    <%= f.number_field :EducationalLevels_idEducatonLevel, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :No_Of_Gcses %><br>
+    <%= f.number_field :noOfGcses, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :Gcse_English_Grade %><br>
+    <%= f.text_field :gecseEnglishGrade , class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :Gcse_Maths_Grade %><br>
+    <%= f.text_field :gcseMathsGrade , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Five_Or_More_Gcses %><br>
+    <%= f.number_field :fiveOrMoreGcses , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :No_Of_A_levels %><br>
+    <%= f.number_field :noOfAlevels, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Ucas_Points %><br>
+    <%= f.number_field :ucasPoints , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :Student_Status %><br>
+    <%= f.text_field :studentStatus , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :Mobile_Number %><br>
+    <%= f.text_field :mobile , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Landline_Number %><br>
+    <%= f.text_field :landline , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dob %><br>
+    <%= f.date_select :dob , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Penalty_Points %><br>
+    <%= f.number_field :penaltyPoints , class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.submit  class: "btn btn-primary" %>
+  </div>
+  <div/>
+<% end %>
