@@ -17,7 +17,11 @@ class PeopleController < ApplicationController
 
   # GET /people/new
   def new
+    if current_user.people.empty?
     @person = Person.new
+    else
+     redirect_to edit_person_path(current_user.people.first)
+    end
   end
 
   # GET /people/1/edit
@@ -76,8 +80,8 @@ class PeopleController < ApplicationController
     end
   def  require_same_user
     if current_user != @person.user
-				flash[:danger] ="You can only edit or delete your transaction"
-				redirect_to transaction_path
+				flash[:danger] ="You can only edit or delete your details"
+				redirect_to root_path
 			end
     end
 end

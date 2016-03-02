@@ -54,7 +54,15 @@
 						<% if logged_in? and not current_user.try(:admin?) %>
 						<% if current_user %>
 
-              <% end %>
+            <li><%= link_to 'Personal', new_person_path %></li>
+						<li><%= link_to "Educational"%></li>
+						<li><%= link_to "Experience"%></li>
+						<li><%= link_to "Job Preferences"%></li>
+						<li><%= link_to "Skills"%></li>
+            <li><%= link_to "Referee"%></li>
+            <li><%= link_to "About Me"%></li>
+
+            <% end %>
 						<% elsif current_user.try(:admin?) %>
 
             <% end %>
