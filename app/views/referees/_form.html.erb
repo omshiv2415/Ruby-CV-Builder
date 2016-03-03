@@ -1,0 +1,60 @@
+<%= render 'shared/errors', obj:@referee %>
+<div class='row'>
+  <%= form_for(@referee, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="col-md-12 col-md-offset-0" >
+   <div class="panel panel-default">
+	  <div class="panel-heading">
+     <h4 align="center"><%= t('.sign_in', :default => "Referee") %></h4>
+	<div class="panel-body">
+  <div class="form-group">
+    <%= f.label :idReferees %><br>
+    <%= f.number_field :idReferees, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Persons_idUser %><br>
+    <%= f.number_field :Persons_idUser, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :forename %><br>
+    <%= f.text_field :forename , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :contactPhone %><br>
+    <%= f.text_field :contactPhone, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :relationship %><br>
+    <%= f.text_field :relationship, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :permissionToContact %><br>
+    <%= f.number_field :permissionToContact, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :verified %><br>
+    <%= f.number_field :verified, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :howVerified %><br>
+    <%= f.text_field :howVerified, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :referenceDoc %><br>
+    <%= f.text_field :referenceDoc, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

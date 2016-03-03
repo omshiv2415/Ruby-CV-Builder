@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Educatioal Qualifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ideducationalqualification</th>
+      <th>Persons iduser</th>
+      <th>Qualificationtype</th>
+      <th>Coursename</th>
+      <th>Educationallevels ideducationlevel</th>
+      <th>Vocational</th>
+      <th>Mainsubject</th>
+      <th>Nameofinstitutions</th>
+      <th>Country</th>
+      <th>Yearobtained</th>
+      <th>Result</th>
+      <th>Thesestitle</th>
+      <th>Verified</th>
+      <th>Howverified</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @educatioal_qualifications.each do |educatioal_qualification| %>
+      <tr>
+        <td><%= educatioal_qualification.idEducationalQualification %></td>
+        <td><%= educatioal_qualification.Persons_idUser %></td>
+        <td><%= educatioal_qualification.qualificationType %></td>
+        <td><%= educatioal_qualification.courseName %></td>
+        <td><%= educatioal_qualification.EducationalLevels_idEducationLevel %></td>
+        <td><%= educatioal_qualification.vocational %></td>
+        <td><%= educatioal_qualification.mainSubject %></td>
+        <td><%= educatioal_qualification.nameOfInstitutions %></td>
+        <td><%= educatioal_qualification.country %></td>
+        <td><%= educatioal_qualification.yearObtained %></td>
+        <td><%= educatioal_qualification.result %></td>
+        <td><%= educatioal_qualification.thesesTitle %></td>
+        <td><%= educatioal_qualification.verified %></td>
+        <td><%= educatioal_qualification.howVerified %></td>
+        <td><%= link_to 'Show', educatioal_qualification %></td>
+        <td><%= link_to 'Edit', edit_educatioal_qualification_path(educatioal_qualification) %></td>
+        <td><%= link_to 'Destroy', educatioal_qualification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Educatioal qualification', new_educatioal_qualification_path %>

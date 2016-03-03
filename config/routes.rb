@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :skills
+  resources :referees
+  resources :experiences
+  resources :educatioal_qualifications
+  resources :educatioal_qualifications
   resources :people
   devise_for :users
   get 'welcome/index'

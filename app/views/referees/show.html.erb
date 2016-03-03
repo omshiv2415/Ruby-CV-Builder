@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idreferees:</strong>
+  <%= @referee.idReferees %>
+</p>
+
+<p>
+  <strong>Persons iduser:</strong>
+  <%= @referee.Persons_idUser %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @referee.title %>
+</p>
+
+<p>
+  <strong>Forename:</strong>
+  <%= @referee.forename %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @referee.surname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @referee.email %>
+</p>
+
+<p>
+  <strong>Contactphone:</strong>
+  <%= @referee.contactPhone %>
+</p>
+
+<p>
+  <strong>Relationship:</strong>
+  <%= @referee.relationship %>
+</p>
+
+<p>
+  <strong>Permissiontocontact:</strong>
+  <%= @referee.permissionToContact %>
+</p>
+
+<p>
+  <strong>Verified:</strong>
+  <%= @referee.verified %>
+</p>
+
+<p>
+  <strong>Howverified:</strong>
+  <%= @referee.howVerified %>
+</p>
+
+<p>
+  <strong>Referencedoc:</strong>
+  <%= @referee.referenceDoc %>
+</p>
+
+<%= link_to 'Edit', edit_referee_path(@referee) %> |
+<%= link_to 'Back', referees_path %>

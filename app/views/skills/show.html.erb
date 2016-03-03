@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idskills:</strong>
+  <%= @skill.idSkills %>
+</p>
+
+<p>
+  <strong>Person iduser:</strong>
+  <%= @skill.Person_idUser %>
+</p>
+
+<p>
+  <strong>Skillname:</strong>
+  <%= @skill.skillName %>
+</p>
+
+<p>
+  <strong>Skilllevel:</strong>
+  <%= @skill.skillLevel %>
+</p>
+
+<p>
+  <strong>Verified:</strong>
+  <%= @skill.verified %>
+</p>
+
+<p>
+  <strong>Howverified:</strong>
+  <%= @skill.howVerified %>
+</p>
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>

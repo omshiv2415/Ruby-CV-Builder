@@ -1,0 +1,1 @@
+json.extract! @referee, :id, :idReferees, :Persons_idUser, :title, :forename, :surname, :email, :contactPhone, :relationship, :permissionToContact, :verified, :howVerified, :referenceDoc, :created_at, :updated_at

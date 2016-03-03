@@ -1,6 +1,7 @@
 $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 #logo {
 float: left;
 font-size: 1.7em;
@@ -31,7 +32,6 @@ border:1px solid green;
 	margin-left: 15px;
 }
 #navbar-fixed-bottom{
-
 	background-size: cover;
 }
 .form-group{
@@ -46,7 +46,6 @@ border:1px solid green;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
-
 }
 #logo:hover{
   color: #01A9DB;
@@ -71,8 +70,8 @@ border:1px solid green;
   margin-top: 30px;
 }
 
-.nav{
-	margin-top: 5px;
+.navbar{
+	padding-top: 12px;
 }
 
 h1 {
@@ -159,8 +158,7 @@ color: #fff;
 
 .btn-xlarge {
   font-size: 1.7em;
-  background-color:black;
-
+  background-color:white;
 }
 .footer {
 	background-color:black;

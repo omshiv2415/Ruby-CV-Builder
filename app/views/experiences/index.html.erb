@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Experiences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idexperiences</th>
+      <th>Persons iduser</th>
+      <th>Datestarted</th>
+      <th>Datefinished</th>
+      <th>Jobtitles idjobtitles</th>
+      <th>Otherjobtitle</th>
+      <th>Keyduties</th>
+      <th>Employmentlevels idlevelsofemployment</th>
+      <th>Employername</th>
+      <th>Verified</th>
+      <th>Howverified</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <td><%= experience.idExperiences %></td>
+        <td><%= experience.Persons_idUser %></td>
+        <td><%= experience.dateStarted %></td>
+        <td><%= experience.dateFinished %></td>
+        <td><%= experience.JobTitles_idJobTitles %></td>
+        <td><%= experience.otherJobTitle %></td>
+        <td><%= experience.keyDuties %></td>
+        <td><%= experience.EmploymentLevels_idLevelsOfEmployment %></td>
+        <td><%= experience.employerName %></td>
+        <td><%= experience.verified %></td>
+        <td><%= experience.howVerified %></td>
+        <td><%= link_to 'Show', experience %></td>
+        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
+        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Back', root_path %>

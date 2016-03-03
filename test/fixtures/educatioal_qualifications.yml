@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idEducationalQualification: 1
+  Persons_idUser: 1
+  qualificationType: MyString
+  courseName: MyString
+  EducationalLevels_idEducationLevel: 
+  vocational: MyString
+  mainSubject: MyString
+  nameOfInstitutions: MyString
+  country: MyString
+  yearObtained: 2016-03-03
+  result: MyString
+  thesesTitle: MyString
+  verified: 1
+  howVerified: MyString
+
+two:
+  idEducationalQualification: 1
+  Persons_idUser: 1
+  qualificationType: MyString
+  courseName: MyString
+  EducationalLevels_idEducationLevel: 
+  vocational: MyString
+  mainSubject: MyString
+  nameOfInstitutions: MyString
+  country: MyString
+  yearObtained: 2016-03-03
+  result: MyString
+  thesesTitle: MyString
+  verified: 1
+  howVerified: MyString

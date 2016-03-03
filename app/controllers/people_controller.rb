@@ -21,7 +21,7 @@ class PeopleController < ApplicationController
     @person = Person.new
     else
      redirect_to edit_person_path(current_user.people.first)
-    end
+		end
   end
 
   # GET /people/1/edit

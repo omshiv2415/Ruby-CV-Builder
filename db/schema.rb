@@ -11,7 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302131907) do
+ActiveRecord::Schema.define(version: 20160303152806) do
+
+  create_table "educatioal_qualifications", force: :cascade do |t|
+    t.integer  "idEducationalQualification"
+    t.integer  "Persons_idUser",                     limit: 10
+    t.string   "qualificationType",                  limit: 16
+    t.string   "courseName",                         limit: 100
+    t.integer  "EducationalLevels_idEducationLevel", limit: 3
+    t.string   "vocational",                         limit: 1
+    t.string   "mainSubject",                        limit: 45
+    t.string   "nameOfInstitutions",                 limit: 100
+    t.string   "country",                            limit: 45
+    t.date     "yearObtained"
+    t.string   "result",                             limit: 20
+    t.string   "thesesTitle",                        limit: 200
+    t.integer  "verified",                           limit: 1
+    t.string   "howVerified",                        limit: 45
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.integer  "user_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.integer  "idExperiences"
+    t.integer  "Persons_idUser",                        limit: 10
+    t.date     "dateStarted"
+    t.date     "dateFinished"
+    t.integer  "JobTitles_idJobTitles",                 limit: 6
+    t.string   "otherJobTitle",                         limit: 45
+    t.string   "keyDuties",                             limit: 255
+    t.integer  "EmploymentLevels_idLevelsOfEmployment", limit: 4
+    t.string   "employerName",                          limit: 45
+    t.integer  "verified",                              limit: 1
+    t.string   "howVerified",                           limit: 45
+    t.integer  "user_id"
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string   "title",                             limit: 10
@@ -41,13 +78,43 @@ ActiveRecord::Schema.define(version: 20160302131907) do
     t.string   "landline",                          limit: 16
     t.date     "dob"
     t.integer  "penaltyPoints",                     limit: 4
+    t.integer  "user_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.integer  "user_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "referees", force: :cascade do |t|
+    t.integer  "idReferees",          limit: 10
+    t.integer  "Persons_idUser",      limit: 10
+    t.string   "title",               limit: 10
+    t.string   "forename",            limit: 45
+    t.string   "surname",             limit: 45
+    t.string   "email",               limit: 50
+    t.string   "contactPhone",        limit: 16
+    t.string   "relationship",        limit: 50
+    t.integer  "permissionToContact", limit: 1
+    t.integer  "verified",            limit: 1
+    t.string   "howVerified",         limit: 45
+    t.string   "referenceDoc"
+    t.integer  "user_id"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer  "idSkills"
+    t.integer  "Person_idUser", limit: 10
+    t.string   "skillName",     limit: 100
+    t.string   "skillLevel"
+    t.integer  "verified",      limit: 1
+    t.string   "howVerified",   limit: 45
+    t.integer  "user_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "users", force: :cascade do |t|

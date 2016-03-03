@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idExperiences: 1
+  Persons_idUser: 1
+  dateStarted: 2016-03-03
+  dateFinished: 2016-03-03
+  JobTitles_idJobTitles: 
+  otherJobTitle: MyString
+  keyDuties: MyString
+  EmploymentLevels_idLevelsOfEmployment: 1
+  employerName: MyString
+  verified: 
+  howVerified: MyString
+
+two:
+  idExperiences: 1
+  Persons_idUser: 1
+  dateStarted: 2016-03-03
+  dateFinished: 2016-03-03
+  JobTitles_idJobTitles: 
+  otherJobTitle: MyString
+  keyDuties: MyString
+  EmploymentLevels_idLevelsOfEmployment: 1
+  employerName: MyString
+  verified: 
+  howVerified: MyString

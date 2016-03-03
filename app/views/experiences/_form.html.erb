@@ -1,0 +1,57 @@
+<%= render 'shared/errors', obj:@experience %>
+<div class='row'>
+  <%= form_for(@experience, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="col-md-12 col-md-offset-0" >
+   <div class="panel panel-default">
+	  <div class="panel-heading">
+     <h4 align="center"><%= t('.sign_in', :default => "Experience") %></h4>
+	<div class="panel-body">
+  <div class="form-group">
+    <%= f.label :idExperiences %><br>
+    <%= f.number_field :idExperiences, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Persons_idUser %><br>
+    <%= f.number_field :Persons_idUser, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dateStarted %><br>
+    <%= f.date_select :dateStarted, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dateFinished %><br>
+    <%= f.date_select :dateFinished, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :JobTitles_idJobTitles %><br>
+    <%= f.text_field :JobTitles_idJobTitles, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :otherJobTitle %><br>
+    <%= f.text_field :otherJobTitle, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :keyDuties %><br>
+    <%= f.text_field :keyDuties, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :EmploymentLevels_idLevelsOfEmployment %><br>
+    <%= f.number_field :EmploymentLevels_idLevelsOfEmployment, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employerName %><br>
+    <%= f.text_field :employerName, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :verified %><br>
+    <%= f.text_field :verified, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :howVerified %><br>
+    <%= f.text_field :howVerified, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= link_to 'Back', root_path %>

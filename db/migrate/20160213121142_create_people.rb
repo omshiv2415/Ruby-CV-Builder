@@ -28,7 +28,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :landline, limit: 16
       t.date :dob
       t.integer :penaltyPoints, limit: 4
-
+      t.integer :user_id
       t.timestamps null: false
     end
   end

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idReferees: 1
+  Persons_idUser: 1
+  title: MyString
+  forename: MyString
+  surname: MyString
+  email: MyString
+  contactPhone: MyString
+  relationship: MyString
+  permissionToContact: 1
+  verified: 1
+  howVerified: MyString
+  referenceDoc: MyString
+
+two:
+  idReferees: 1
+  Persons_idUser: 1
+  title: MyString
+  forename: MyString
+  surname: MyString
+  email: MyString
+  contactPhone: MyString
+  relationship: MyString
+  permissionToContact: 1
+  verified: 1
+  howVerified: MyString
+  referenceDoc: MyString

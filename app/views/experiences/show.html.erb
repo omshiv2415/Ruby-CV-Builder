@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idexperiences:</strong>
+  <%= @experience.idExperiences %>
+</p>
+
+<p>
+  <strong>Persons iduser:</strong>
+  <%= @experience.Persons_idUser %>
+</p>
+
+<p>
+  <strong>Datestarted:</strong>
+  <%= @experience.dateStarted %>
+</p>
+
+<p>
+  <strong>Datefinished:</strong>
+  <%= @experience.dateFinished %>
+</p>
+
+<p>
+  <strong>Jobtitles idjobtitles:</strong>
+  <%= @experience.JobTitles_idJobTitles %>
+</p>
+
+<p>
+  <strong>Otherjobtitle:</strong>
+  <%= @experience.otherJobTitle %>
+</p>
+
+<p>
+  <strong>Keyduties:</strong>
+  <%= @experience.keyDuties %>
+</p>
+
+<p>
+  <strong>Employmentlevels idlevelsofemployment:</strong>
+  <%= @experience.EmploymentLevels_idLevelsOfEmployment %>
+</p>
+
+<p>
+  <strong>Employername:</strong>
+  <%= @experience.employerName %>
+</p>
+
+<p>
+  <strong>Verified:</strong>
+  <%= @experience.verified %>
+</p>
+
+<p>
+  <strong>Howverified:</strong>
+  <%= @experience.howVerified %>
+</p>
+
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', root_path %>

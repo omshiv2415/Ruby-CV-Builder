@@ -1,0 +1,36 @@
+<%= render 'shared/errors', obj:@skill %>
+<div class='row'>
+  <%= form_for(@skill, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="col-md-12 col-md-offset-0" >
+   <div class="panel panel-default">
+	  <div class="panel-heading">
+     <h4 align="center"><%= t('.sign_in', :default => "Skills") %></h4>
+	<div class="panel-body">
+  <div class="form-group">
+    <%= f.label :idSkills %><br>
+    <%= f.number_field :idSkills, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Person_idUser %><br>
+    <%= f.number_field :Person_idUser, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :skillName %><br>
+    <%= f.text_field :skillName, class: "form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :skillLevel %><br>
+    <%= f.text_field :skillLevel, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :verified %><br>
+    <%= f.number_field :verified, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :howVerified %><br>
+    <%= f.text_field :howVerified, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idSkills: 1
+  Person_idUser: 1
+  skillName: MyString
+  skillLevel: MyString
+  verified: 1
+  howVerified: MyString
+
+two:
+  idSkills: 1
+  Person_idUser: 1
+  skillName: MyString
+  skillLevel: MyString
+  verified: 1
+  howVerified: MyString

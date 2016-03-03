@@ -53,24 +53,32 @@
           <ul class="nav navbar-nav">
 						<% if logged_in? and not current_user.try(:admin?) %>
 						<% if current_user %>
-
             <li><%= link_to 'Personal', new_person_path %></li>
-						<li><%= link_to "Educational"%></li>
-						<li><%= link_to "Experience"%></li>
+						<li><%= link_to "Educational", new_educatioal_qualification_path %></li>
+						<li><%= link_to "Experience", new_experience_path %></li>
+						<li><%= link_to "Job Preferences"%></li>
+						<li><%= link_to "Skills", new_skill_path %></li>
+            <li><%= link_to "Referee", new_referee_path %></li>
+            <li><%= link_to "About Me"%></li>
+					  <li><%= link_to('Logout', destroy_user_session_path,
+					  class: 'btn-xs btn-danger', title: 'Logout', :method => :delete) %><li>
+            <% end %>
+						<% elsif current_user.try(:admin?) %>
+            <li><%= link_to 'Personal', new_person_path %></li>
+						<li><%= link_to "Educational", new_educatioal_qualification_path %></li>
+						<li><%= link_to "Experience", new_experience_path %></li>
 						<li><%= link_to "Job Preferences"%></li>
 						<li><%= link_to "Skills"%></li>
             <li><%= link_to "Referee"%></li>
             <li><%= link_to "About Me"%></li>
-
-            <% end %>
-						<% elsif current_user.try(:admin?) %>
-
+					  <li><%= link_to('Logout', destroy_user_session_path,
+					  class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %><li>
             <% end %>
           </ul>
 					<ul class="nav navbar-right col-md-4">
 					<% if current_user.try(:admin?) %>
 					<li class="col-md-8 user-name">
-            <%= link_to ('<i class="fa  fa-user-secret"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+            <%= link_to ('<i class="fa  fa-user-secret"></i> ' + truncate(current_user.email, length: 45)).html_safe,
 					edit_user_registration_path, title: 'Edit Profile' %>
 				 <h6 align="left|justify"style="color:white">Logged in as Admin</h6>
 				 <h6 align="left|justify"style="color:white"> Last Logged in <%= current_user.last_sign_in_at.strftime("%d %b %Y %H:%M:%S") %></h6>
@@ -80,16 +88,14 @@
 					<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
 					class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %>
 					<% elsif current_user %>
-					<li class="col-md-8 user-name">
-            <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
+            <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 45)).html_safe,
 					edit_user_registration_path, title: 'Edit Profile' %>
 					<h6 align="left|justify"style="color:white"><%= @username %></h6>
 				  <h6 align="left|justify"style="color:white"> Last Logged in: <%= current_user.last_sign_in_at.strftime("%d %b %Y %H:%M:%S") %></h6>
 				  <h6 align="left|justify"style="color:white">Logged in: <%= current_user.sign_in_count %> times </h6>
 					</li>
 					<li class="col-md-1"> </li>
-					<li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
-					class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %>
+
 
 					<% else %>
 					<li class="col-md-4 pull-right">

@@ -1,0 +1,1 @@
+json.extract! @educatioal_qualification, :id, :idEducationalQualification, :Persons_idUser, :qualificationType, :courseName, :EducationalLevels_idEducationLevel, :vocational, :mainSubject, :nameOfInstitutions, :country, :yearObtained, :result, :thesesTitle, :verified, :howVerified, :created_at, :updated_at

@@ -1,0 +1,69 @@
+<%= render 'shared/errors', obj:@educatioal_qualification %>
+<div class='row'>
+  <%= form_for(@educatioal_qualification, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="col-md-12 col-md-offset-0" >
+   <div class="panel panel-default">
+	  <div class="panel-heading">
+     <h4 align="center"><%= t('.sign_in', :default => "Educational Deatails") %></h4>
+
+	<div class="panel-body">
+  <div class="form-group">
+    <%= f.label :idEducationalQualification %><br>
+    <%= f.number_field :idEducationalQualification, class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :Persons_idUser %><br>
+    <%= f.number_field :Persons_idUser, class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :qualificationType %><br>
+    <%= f.text_field :qualificationType , class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :courseName %><br>
+    <%= f.text_field :courseName, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :EducationalLevels_idEducationLevel %><br>
+    <%= f.text_field :EducationalLevels_idEducationLevel , class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :vocational %><br>
+    <%= f.text_field :vocational, class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :mainSubject %><br>
+    <%= f.text_field :mainSubject, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :nameOfInstitutions %><br>
+    <%= f.text_field :nameOfInstitutions , class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :country %><br>
+    <%= f.text_field :country , class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :yearObtained %><br>
+    <%= f.date_select :yearObtained , class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :result %><br>
+    <%= f.text_field :result, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :thesesTitle %><br>
+    <%= f.text_field :thesesTitle, class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :verified %><br>
+    <%= f.number_field :verified , class: "form-control" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :howVerified %><br>
+    <%= f.text_field :howVerified , class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
