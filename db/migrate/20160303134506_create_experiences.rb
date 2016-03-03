@@ -2,7 +2,7 @@ class CreateExperiences < ActiveRecord::Migration
   def change
     create_table :experiences do |t|
       t.integer :idExperiences
-      t.integer :Persons_idUser, limit: 10
+      t.integer :Persons_idUser
       t.date :dateStarted
       t.date :dateFinished
       t.integer :JobTitles_idJobTitles, limit: 6

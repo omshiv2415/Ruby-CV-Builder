@@ -1,8 +1,8 @@
 class CreateReferees < ActiveRecord::Migration
   def change
     create_table :referees do |t|
-      t.integer :idReferees, limit: 10
-      t.integer :Persons_idUser, limit: 10
+      t.integer :idReferees
+      t.integer :Persons_idUser
       t.string :title, limit: 10
       t.string :forename, limit: 45
       t.string :surname, limit: 45

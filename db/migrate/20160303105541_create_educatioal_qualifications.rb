@@ -2,7 +2,7 @@ class CreateEducatioalQualifications < ActiveRecord::Migration
   def change
     create_table :educatioal_qualifications do |t|
       t.integer :idEducationalQualification
-      t.integer :Persons_idUser, limit: 10
+      t.integer :Persons_idUser
       t.string :qualificationType, limit: 16
       t.string :courseName, limit: 100
       t.integer :EducationalLevels_idEducationLevel, limit:3

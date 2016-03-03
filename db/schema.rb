@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 20160303152806) do
     t.string   "landline",                          limit: 16
     t.date     "dob"
     t.integer  "penaltyPoints",                     limit: 4
-    t.integer  "user_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+    t.integer  "user_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
