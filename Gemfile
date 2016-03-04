@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-gem "mini_magick"
-gem 'carrierwave'
+
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
@@ -8,6 +7,7 @@ gem 'devise-bootstrap-views'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
 gem 'wicked_pdf'
+gem 'prawn'
 gem "paperclip", "~> 4.3"
 gem 'wkhtmltopdf-binary'
 gem 'rails-jcarousel'

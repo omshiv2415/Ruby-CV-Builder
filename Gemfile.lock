@@ -47,11 +47,6 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.2)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     choice (0.2.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -101,7 +96,6 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
     mimemagic (0.3.0)
-    mini_magick (4.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -114,7 +108,11 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pdf-core (0.6.1)
     pg (0.18.4)
+    prawn (2.1.0)
+      pdf-core (~> 0.6.1)
+      ttfunk (~> 1.4.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -182,6 +180,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    ttfunk (1.4.0)
     turbolinks (2.5.3)
       coffee-rails
     twitter-bootstrap-rails (3.2.2)
@@ -210,15 +209,14 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   byebug
-  carrierwave
   coffee-rails (~> 4.1.0)
   devise
   devise-bootstrap-views
   jbuilder (~> 2.0)
   jquery-rails
-  mini_magick
   paperclip (~> 4.3)
   pg
+  prawn
   railroady
   rails (= 4.2.5.1)
   rails-erd

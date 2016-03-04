@@ -52,7 +52,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= image_tag(@person.photo) %>
+  <%= wicked_pdf_image_tag(@person.photo) %>
 </p>
 
 <p>
@@ -137,4 +137,3 @@
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', root_path %>
-<p><%= link_to 'Printable Receipt (PDF)', person_path(@people, format: 'pdf') %></p>

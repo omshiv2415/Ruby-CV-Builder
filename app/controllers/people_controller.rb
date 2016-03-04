@@ -13,8 +13,17 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-  end
-
+    @people = Person.find(current_user)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+        :template => 'people/show.pdf.erb',
+        :layout => 'pdf.html.erb',
+        :show_as_html => params[:debug].present?
+      end
+    end
+	end
   # GET /people/new
   def new
     if current_user.people.empty?

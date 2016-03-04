@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160303152806) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
-    t.integer  "Persons_idUser",                     limit: 10
+    t.integer  "Persons_idUser"
     t.string   "qualificationType",                  limit: 16
     t.string   "courseName",                         limit: 100
     t.integer  "EducationalLevels_idEducationLevel", limit: 3

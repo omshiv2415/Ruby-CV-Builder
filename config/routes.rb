@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :people
   devise_for :users
   get 'welcome/index'
+	get 'welcome/show', to: 'welcome#show'
   gem 'devise'
   gem 'twitter-bootstrap-rails'
   gem 'devise-bootstrap-views'
