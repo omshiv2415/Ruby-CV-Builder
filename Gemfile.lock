@@ -101,6 +101,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
     mimemagic (0.3.0)
+    mini_magick (4.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -216,6 +217,7 @@ DEPENDENCIES
   devise-bootstrap-views
   jbuilder (~> 2.0)
   jquery-rails
+  mini_magick
   paperclip (~> 4.3)
   pg
   railroady
