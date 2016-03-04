@@ -13,7 +13,7 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    @people = Person.find(current_user)
+
     respond_to do |format|
       format.html
       format.pdf do

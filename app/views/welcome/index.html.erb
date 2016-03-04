@@ -2,7 +2,12 @@
 <h3 align="center"> <%= "#" %></h3>
 
 <% elsif current_user%>
-<%= render 'welcome/cv' %>
+
+<% if current_user.people.empty? %>
+
+ <% else %>
+   <%= render 'welcome/cv' %>
+<% end %>
 <% else %>
 <div class="center jumbotron">
 <h2 align="center"style="color:white">Welcome to the Ruby CV Builder</h2>

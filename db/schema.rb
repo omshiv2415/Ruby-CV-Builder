@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160303152806) do
 
   create_table "experiences", force: :cascade do |t|
     t.integer  "idExperiences"
-    t.integer  "Persons_idUser",                        limit: 10
+    t.integer  "Persons_idUser"
     t.date     "dateStarted"
     t.date     "dateFinished"
     t.integer  "JobTitles_idJobTitles",                 limit: 6
@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 20160303152806) do
     t.string   "landline",                          limit: 16
     t.date     "dob"
     t.integer  "penaltyPoints",                     limit: 4
+    t.integer  "user_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.integer  "user_id"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20160303152806) do
   end
 
   create_table "referees", force: :cascade do |t|
-    t.integer  "idReferees",          limit: 10
-    t.integer  "Persons_idUser",      limit: 10
+    t.integer  "idReferees"
+    t.integer  "Persons_idUser"
     t.string   "title",               limit: 10
     t.string   "forename",            limit: 45
     t.string   "surname",             limit: 45
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20160303152806) do
 
   create_table "skills", force: :cascade do |t|
     t.integer  "idSkills"
-    t.integer  "Person_idUser", limit: 10
+    t.integer  "Person_idUser"
     t.string   "skillName",     limit: 100
     t.string   "skillLevel"
     t.integer  "verified",      limit: 1

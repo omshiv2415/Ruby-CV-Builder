@@ -30,7 +30,7 @@
 			</div>
 
 			<div id="photo">
-				<%= image_tag(@people) %>
+				<%= image_tag(Person.find(current_user).photo) %>
 			</div>
 		</header>
 

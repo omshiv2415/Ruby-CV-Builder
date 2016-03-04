@@ -10,4 +10,14 @@ class Person < ActiveRecord::Base
                      content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
                      size: { in: 0..5000.kilobytes }
 
+  before_save :user_setup
+
+
+	private
+	def user_setup
+		if self.id.blank?
+			self.id = self.user_id
+			#self.user_id = self.email
+		end
+	end
 end
