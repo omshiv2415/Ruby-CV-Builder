@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
   def index
 		if current_user
 			 @people =  Person.all
+       @people1 = current_user.people.find(current_user)
      # @people = current_user.people.find(current_user).photo
 	 	end
   end

@@ -19,13 +19,17 @@
 		<header class="clearfix">
 			<div id="info">
 				<h1><span itemprop="name">Viralkumar J Patel</span></h1>
-				<h3><span itemprop="jobTitle">Android Developer &amp; Ruby on Rails Web Developer</span></h3>
+				<h3 align="center"><span itemprop="jobTitle">Android Developer &amp; Ruby on Rails Web Developer</span></h3>
 				<small itemprop="address" itemscope itemtype="">
-				  <span itemprop="addressLocality">Hudson</span>,
-				  <span itemprop="addressRegion">Massachusetts</span>,
-				  <span itemprop="addressCountry">USA</span>
+				  <span >Address<%= @people.addressLine1 %></span>,
+				  <span ><%= @people.addressLine2 %></span>,
+				  <span ><%= @people.town %></span>
+          <span ><%= @people.postcode %></span>
+          <span >Email:<%= @people.secondEmail %></span>
+          <span >Mobile No:<%= @people.mobile %></span>
+          <span >Landline:<%= @people.landline %></span>
+          <span >Web:<%= @people.personalUrl %></span>
 				</small>
-				<small><span itemprop="email">jakerocheleau@gmail.com</span></small>
 				<small><a href="http://viralkumarjpatel.co.uk" itemprop="url">My Portfolio</a> </small>
 			</div>
     <h2>Personal Details &amp; Profile</h2>
@@ -36,9 +40,7 @@
 
 		<section id="profile">
 			<h2>My History &amp; Profile</h2>
-			<p itemprop="description">I'm a 21 year old web designer and developer working out of eastern Massachusetts. I have been coding websites ever since sophomore year of high school in my first web design class. Fast-forward a few years later I was landing freelance projects most of my junior and senior years. During this time I was also working part-time at Best Buy's Geek Squad division.</p>
-
-			<p>After graduating High School in summer 2009 I started writing on various web design blogs along with launching my own startup ideas. A few months later in September 2009 I spent a couple months studying at <a href="http://www.wpi.edu/">Worcester Polytechnic Institute</a> in Worcester, Massachsuetts. However I left in January 2010 to pursue a career on my own. I now work doing freelance writing and building side-projects in my spare time.</p>
+			<p align="justify" itemprop="description"><%= @people.authorityToWorkStatement %></p>
 		</section>
 
 		<section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
