@@ -9,7 +9,8 @@ class Person < ActiveRecord::Base
 	validates_attachment :photo, presence: true,
                      content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
                      size: { in: 0..5000.kilobytes }
-
+  has_attached_file :mycv
+  validates_attachment_content_type :mycv, :content_type => [ 'application/pdf','text/plain']
   before_save :user_setup
 
 

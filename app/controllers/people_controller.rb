@@ -85,7 +85,7 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:title, :forename1, :forename2, :surname, :addressLine1, :addressLine2, :town, :postcode, :secondEmail, :personalUrl, :photo, :female, :postcodeStart, :authorityToWorkStatement, :contactPreference, :EducationalLevels_idEducatonLevel, :noOfGcses, :gecseEnglishGrade, :gcseMathsGrade, :fiveOrMoreGcses, :noOfAlevels, :ucasPoints, :studentStatus, :mobile, :landline, :dob, :penaltyPoints)
+      params.require(:person).permit(:title, :forename1, :forename2, :surname, :addressLine1, :addressLine2, :town, :postcode, :secondEmail, :personalUrl, :photo, :female, :postcodeStart, :authorityToWorkStatement, :contactPreference, :EducationalLevels_idEducatonLevel, :noOfGcses, :gecseEnglishGrade, :gcseMathsGrade, :fiveOrMoreGcses, :noOfAlevels, :ucasPoints, :studentStatus, :mobile, :landline, :dob, :penaltyPoints, :mycv)
     end
   def  require_same_user
     if current_user != @person.user

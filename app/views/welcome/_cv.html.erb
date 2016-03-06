@@ -32,6 +32,7 @@
 			</div>
 			<div id="photo">
         <%= image_tag(Person.find(current_user).photo) %> <br/>
+        <%= link_to "Download", @people1.mycv.url(:original, false) %>
         <big><a href="http://viralkumarjpatel.co.uk" itemprop="url">My Portfolio</a> </big>
 			</div>
 		</header>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303152806) do
+ActiveRecord::Schema.define(version: 20160306214506) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
@@ -85,6 +85,11 @@ ActiveRecord::Schema.define(version: 20160303152806) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "mycv"
+    t.string   "mycv_file_name"
+    t.string   "mycv_content_type"
+    t.integer  "mycv_file_size"
+    t.datetime "mycv_updated_at"
   end
 
   create_table "referees", force: :cascade do |t|
