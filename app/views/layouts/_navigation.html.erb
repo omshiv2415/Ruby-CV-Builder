@@ -64,15 +64,7 @@
 					  class: 'btn-xs btn-danger', title: 'Logout', :method => :delete) %><li>
             <% end %>
 						<% elsif current_user.try(:admin?) %>
-            <li><%= link_to 'Personal', new_person_path %></li>
-						<li><%= link_to "Educational", new_educatioal_qualification_path %></li>
-						<li><%= link_to "Experience", new_experience_path %></li>
-						<li><%= link_to "Job Preferences"%></li>
-						<li><%= link_to "Skills"%></li>
-            <li><%= link_to "Referee"%></li>
-            <li><%= link_to "About Me"%></li>
-					  <li><%= link_to('Logout', destroy_user_session_path,
-					  class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %><li>
+            <li><%= link_to 'Job Seeker', people_path %></li>
             <% end %>
           </ul>
 					<ul class="nav navbar-right col-md-4">

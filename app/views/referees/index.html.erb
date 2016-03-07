@@ -5,8 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Idreferees</th>
-      <th>Persons iduser</th>
       <th>Title</th>
       <th>Forename</th>
       <th>Surname</th>
@@ -24,8 +22,7 @@
   <tbody>
     <% @referees.each do |referee| %>
       <tr>
-        <td><%= referee.idReferees %></td>
-        <td><%= referee.Persons_idUser %></td>
+
         <td><%= referee.title %></td>
         <td><%= referee.forename %></td>
         <td><%= referee.surname %></td>

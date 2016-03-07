@@ -5,8 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Ideducationalqualification</th>
-      <th>Persons iduser</th>
+
       <th>Qualificationtype</th>
       <th>Coursename</th>
       <th>Educationallevels ideducationlevel</th>
@@ -26,8 +25,6 @@
   <tbody>
     <% @educatioal_qualifications.each do |educatioal_qualification| %>
       <tr>
-        <td><%= educatioal_qualification.idEducationalQualification %></td>
-        <td><%= educatioal_qualification.Persons_idUser %></td>
         <td><%= educatioal_qualification.qualificationType %></td>
         <td><%= educatioal_qualification.courseName %></td>
         <td><%= educatioal_qualification.EducationalLevels_idEducationLevel %></td>

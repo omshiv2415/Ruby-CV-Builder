@@ -17,7 +17,7 @@ class SkillsController < ApplicationController
   # GET /skills/new
   def new
 
-		if current_user.skills.empty?
+		if current_user.skills.count < 5
       @skill = Skill.new
     else
      redirect_to edit_skill_path(current_user.skills.first)

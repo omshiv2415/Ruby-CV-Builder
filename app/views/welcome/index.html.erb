@@ -1,10 +1,10 @@
 <% if current_user.try(:admin?) %>
-<h3 align="center"> <%= "#" %></h3>
-
+<h3 align="center"> <%= "" %></h3>
+ <%= render 'people/jobseeker', obj: @people %>
 <% elsif current_user%>
 
-<% if current_user.people.empty? %>
-
+<% if current_user.people.blank? %>
+<h2 align="center"style="color:white">Please fill up your details to create CV</h2>
  <% else %>
    <%= render 'welcome/cv' %>
 <% end %>

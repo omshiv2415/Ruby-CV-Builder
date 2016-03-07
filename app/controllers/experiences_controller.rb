@@ -17,7 +17,7 @@ class ExperiencesController < ApplicationController
 
   # GET /experiences/new
   def new
-		 if current_user.experiences.empty?
+		 if current_user.experiences.count < 5
       @experience = Experience.new
     else
      redirect_to edit_experience_path(current_user.experiences.first)

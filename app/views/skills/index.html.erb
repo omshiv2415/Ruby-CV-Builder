@@ -5,8 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Idskills</th>
-      <th>Person iduser</th>
       <th>Skillname</th>
       <th>Skilllevel</th>
       <th>Verified</th>
@@ -18,8 +16,6 @@
   <tbody>
     <% @skills.each do |skill| %>
       <tr>
-        <td><%= skill.idSkills %></td>
-        <td><%= skill.Person_idUser %></td>
         <td><%= skill.skillName %></td>
         <td><%= skill.skillLevel %></td>
         <td><%= skill.verified %></td>

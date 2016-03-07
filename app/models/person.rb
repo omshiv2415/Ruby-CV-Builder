@@ -21,4 +21,12 @@ class Person < ActiveRecord::Base
 			#self.user_id = self.email
 		end
 	end
+
+  def self.search(query)
+  if query
+    where(['forename1 LIKE ? OR surname LIKE ?', "%#{query}%", "%#{query}%"])
+  else
+    self.all
+  end
+end
 end

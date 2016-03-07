@@ -1,10 +1,17 @@
 class WelcomeController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   def index
-		if current_user
-			 @people =  Person.all
-       @people1 = current_user.people.find(current_user)
-     # @people = current_user.people.find(current_user).photo
+
+    if current_user.try(:admin?)
+		   @people =  Person.all
+		   elsif current_user
+
+        if current_user.people.blank?
+          redirect_to new_person_path
+          else
+           @people1 = current_user.people.find(current_user)
+        end
+
 	 	end
   end
 def show

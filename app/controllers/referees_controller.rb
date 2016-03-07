@@ -17,7 +17,7 @@ class RefereesController < ApplicationController
   # GET /referees/new
   def new
 
-	if current_user.referees.empty?
+	if current_user.referees.count <= 2
     @referee = Referee.new
     else
       redirect_to edit_referee_path(current_user.referees.first)
