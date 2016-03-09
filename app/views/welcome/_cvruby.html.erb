@@ -32,6 +32,8 @@
 	</head>
 
 	<body>
+        <p align="center"><%= link_to 'Printable or Download CV (PDF)', welcome_show_path(@people, format: 'pdf') %></p>
+    <br/> <br/> <br/>
 		<div class="container-fluid wrapper">
 
 			<!-- Heading
@@ -39,19 +41,20 @@
 			<div class="row-fluid heading">
 
 				<div class="span8">
-					<%= wicked_pdf_image_tag(Person.find(current_user).photo, :class => "my-picture1")%>
-					<h1 class="my-name"> <%= @people.forename1 %></h1>
+					<%= image_tag(Person.find(current_user).photo,:class => "my-picture")%>
+					<h1 class="my-name"> <%= @people1.forename1 %></h1>
 					<h2 class="my-profession">Your Profession</h2>
 					<p align="justify" class="my-message">
 						<i class="icon-comment-alt"></i>&nbsp;
-            <%= @people.authorityToWorkStatement %>
-					</p>
+            <%= @people1.authorityToWorkStatement %>
+          </p>
 				</div>
 
 				<div class="span4">
           <h2 class="my-services">
             <i class="icon-cogs"></i>&nbsp;My Services
             <a class="my-tooltip" href="#" data-original-title="Download Resume">
+
               <i class="icon-download-alt"></i>
             </a>
           </h2>
