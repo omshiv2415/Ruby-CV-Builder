@@ -41,7 +41,7 @@
 			<div class="row-fluid heading">
 
 				<div class="span8">
-					<%= image_tag(Person.find(current_user).photo,:class => "my-picture")%>
+					<%= image_tag(@people1.photo,:class => "my-picture")%>
 					<h1 class="my-name"> <%= @people1.forename1 %></h1>
 					<h2 class="my-profession">Your Profession</h2>
 					<p align="justify" class="my-message">
