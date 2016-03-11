@@ -76,7 +76,7 @@ class SkillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_params
-      params.require(:skill).permit(:idSkills, :Person_idUser, :skillName, :skillLevel, :verified, :howVerified)
+      params.require(:skill).permit(:idSkills, :skillType, :Person_idUser, :skillName, :skillLevel, :verified, :howVerified)
     end
 	def  require_same_user
     if current_user != @skill.user

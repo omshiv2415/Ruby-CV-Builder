@@ -5,12 +5,11 @@
    <div class="panel panel-default">
 	  <div class="panel-heading">
      <h4 align="center"><%= t('.sign_in', :default => "Personal Deatails") %></h4>
-
-	<div class="panel-body">
+      <div class="panel-body">
   <div class="form-group">
-    <%= f.label :Title %><br>
-    <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
-		</div>
+      <%= f.label :Title %><br>
+      <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
+  </div>
   <div class="form-group">
     <%= f.label :Forename %><br>
     <%= f.text_field :forename1 , class: "form-control" %>
@@ -61,7 +60,7 @@
   </div>
   <div class="form-group">
     <%= f.label :Authority_To_Work_Statement,"Autority To Work Statement" %><br>
-    <%= f.text_field :authorityToWorkStatement , class: "form-control" %>
+    <%= f.text_area_field :authorityToWorkStatement , class: "form-control" %>
    </div>
   <div class="form-group">
     <%= f.label :Contact_Preference,"Contact Preference" %><br>
@@ -109,8 +108,9 @@
   </div>
   <div class="form-group">
     <%= f.label :dob,"Date of Birth" %><br>
-    <%= f.date_select :dob , class: "form-control" %>
-  </div>
+    <%= f.date_select :dob, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
+    [:day, :month, :year], class: "form-control" %>
+        </div>
   <div class="form-group">
     <%= f.label :Penalty_Points, "Penalty Points" %><br>
     <%= f.number_field :penaltyPoints , class: "form-control" %>

@@ -9,19 +9,27 @@ class WelcomeController < ApplicationController
         if current_user.people.blank?
           redirect_to new_person_path
           else
-           @people1 = current_user.people.find(current_user)
+           @people = current_user.people.find(current_user)
+           @skills = current_user.skills
+           @experiences = current_user.experiences
+           @educatioal_qualifications = current_user.educatioal_qualifications.all.order(created_at: :desc)
         end
-
 	 	end
   end
 def show
    @people = current_user.people.find(current_user)
+   @skills = current_user.skills
+   @experiences = current_user.experiences
+   @educatioal_qualifications = current_user.educatioal_qualifications.all
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => 'file_name',
+        render :pdf => "#{@people.forename1}",
         :template => 'welcome/download_my_cv.pdf.erb',
         :layout => 'pdf.html.erb',
+         dpi: '600',
+         background: true,
+
         :show_as_html => params[:debug].present?
       end
     end

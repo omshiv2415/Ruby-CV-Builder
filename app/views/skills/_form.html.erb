@@ -6,21 +6,17 @@
 	  <div class="panel-heading">
      <h4 align="center"><%= t('.sign_in', :default => "Skills") %></h4>
 	<div class="panel-body">
+    <div class="form-group">
+    <%= f.label :Skill_Type %><br>
+    <%= f.text_field :skillType, class: "form-control" %>
+  </div>
   <div class="form-group">
-    <%= f.label :skillName %><br>
+    <%= f.label :Skill_Name %><br>
     <%= f.text_field :skillName, class: "form-control" %>
   </div>
  <div class="form-group">
-    <%= f.label :skillLevel %><br>
-    <%= f.text_field :skillLevel, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :verified %><br>
-    <%= f.number_field :verified, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :howVerified %><br>
-    <%= f.text_field :howVerified, class: "form-control" %>
+    <%= f.label :Skill_Level %><br>
+    <%= f.select :skillLevel, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10']], params[:title]),{}, { class: "form-control"} %>
   </div>
   <div class="actions">
     <%= f.submit %>

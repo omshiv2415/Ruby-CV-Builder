@@ -1,6 +1,10 @@
 class Person < ActiveRecord::Base
   belongs_to :user
-  accepts_nested_attributes_for :user
+  has_many :educatioal_qualification
+  has_many :skill
+  has_many :experience
+  accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience
+
   has_attached_file :photo,styles: { thumb: ["64x64#", :jpg],
                             original: ['300x300>', :jpg] },
                             convert_options: { thumb: "-quality 75 -strip",
