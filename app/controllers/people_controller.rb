@@ -6,11 +6,17 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    if params[:search]
-      @people = Person.search(params[:search]).order("created_at DESC")
-    else
-      @people = Person.order("created_at DESC")
+    if current_user.try(:admin?)
+        if params[:search]
+          @people = Person.search(params[:search]).order("created_at DESC")
+          else
+          @people = Person.order("created_at DESC")
+        end
+      else
+         flash[:danger] = "You must admin to perform this activity"
+         redirect_to root_path
     end
+
   end
 
   # GET /people/1

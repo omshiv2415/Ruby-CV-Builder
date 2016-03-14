@@ -3,7 +3,35 @@ class Person < ActiveRecord::Base
   has_many :educatioal_qualification
   has_many :skill
   has_many :experience
-  accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience
+  has_many :referee
+
+  accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience, :referee
+
+  validates :title, presence: true, length: {minimum:1, maximum:15}
+  validates :forename1, presence: true, length: {minimum:1, maximum:70}
+  validates :forename2, presence: true, length: {minimum:1, maximum:15}
+  validates :surname, presence: true, length: {minimum:1, maximum:15}
+  validates :addressLine1, presence: true, length: {minimum:1, maximum:75}
+  validates :addressLine2, presence: true, length: {minimum:1, maximum:50}
+  validates :town, presence: true, length: {minimum:1, maximum:50}
+  validates :postcode, presence: true, length: {minimum:1, maximum:15}
+  validates :secondEmail, presence: true, length: {minimum:1, maximum:15}
+  validates :personalUrl, presence: true, length: {minimum:1, maximum:50}
+  validates :female, presence: true, length: {minimum:1, maximum:15}
+  validates :postcodeStart, presence: true, length: {minimum:1, maximum:15}
+  validates :authorityToWorkStatement, presence: true, length: {minimum:1, maximum:750}
+  validates :contactPreference, presence: true, length: {minimum:1, maximum:15}
+  validates :noOfGcses, presence: true, length: {minimum:1, maximum:15}
+  validates :gecseEnglishGrade, presence: true, length: {minimum:1, maximum:50}
+  validates :gcseMathsGrade, presence: true, length: {minimum:1, maximum:15}
+  validates :fiveOrMoreGcses, presence: true, length: {minimum:1, maximum:15}
+  validates :noOfAlevels, presence: true, length: {minimum:1, maximum:15}
+  validates :ucasPoints, presence: true, length: {minimum:1, maximum:50}
+  validates :mobile, presence: true, length: {minimum:1, maximum:15}
+  validates :landline, presence: true, length: {minimum:1, maximum:15}
+  validates :dob, presence: true, length: {minimum:1, maximum:50}
+  validates :penaltyPoints, presence: true, length: {minimum:1, maximum:15}
+  validates :mycv, presence: true, length: {minimum:1, maximum:15}
 
   has_attached_file :photo,styles: { thumb: ["64x64#", :jpg],
                             original: ['300x300>', :jpg] },

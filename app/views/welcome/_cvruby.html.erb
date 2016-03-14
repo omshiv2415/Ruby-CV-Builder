@@ -28,10 +28,9 @@
 			<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
 		<![endif]-->
 	</head>
-
 	<body>
     <p align="center"><%= link_to 'Print or Download CV (PDF)', welcome_show_path(@people, format: 'pdf') %></p>
-    <br/> <br/> <br/>
+    <br/> <br/>
 		<div class="container-fluid wrapper">
 
 			<!-- Heading
@@ -103,40 +102,6 @@
           <hr/>
           <% end %>
 				</div>
-
-
-					<h3 class="my-caption">Foreign Languages</h3>
-					<h4 class="my-skill">
-						Language I
-						<span>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star-empty"></i>
-						</span>
-					</h4>
-					<h4 class="my-skill">
-						Language II
-						<span>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star-empty"></i>
-						</span>
-					</h4>
-					<h4 class="my-skill">
-						Language III
-						<span>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star-empty"></i>
-							<i class="icon-star-empty"></i>
-						</span>
-					</h4>
-				</div>
 			<!-- end of resume -->
 			<!-- Contact
 			================================================== -->
@@ -144,7 +109,7 @@
 				<!--column 1 -->
 				<div class="span4">
 					<h3 class="my-caption">Personal Information</h3>
-          <h5 class="my-venture"> <span> <%= link_to 'Edit', edit_person_path(@people) %> </span></h5><br/>
+          <h5 class="my-venture"><span> <%= link_to 'Edit', edit_person_path(@people) %> </span></h5><br/>
 					<h4 class="my-info">Birthday <span><%= @people.dob.strftime("%d %b %Y") %></span></h4>
 					<h4 class="my-info">Address <span><%= @people.addressLine1 %></span></h4>
 					<h4 class="my-info">&nbsp;<span><%= @people.addressLine2 %></span></h4>
