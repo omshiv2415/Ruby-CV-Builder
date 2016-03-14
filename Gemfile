@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'carrierwave'
 gem 'devise'
+gem 'aws-sdk'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'bootstrap_progressbar'
