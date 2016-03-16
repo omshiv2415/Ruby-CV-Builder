@@ -5,125 +5,167 @@
    <div class="panel panel-default">
 	  <div class="panel-heading">
      <h4 align="center"><%= t('.sign_in', :default => "Personal Deatails") %></h4>
-
+    <hr/>
 	<div class="panel-body">
-  <div class="form-group">
-    <%= f.label :Title %><br>
-    <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
-		</div>
-  <div class="form-group">
-    <%= f.label :Forename %><br>
-    <%= f.text_field :forename1 , class: "form-control" %>
+   <div class="panel panel-default">
+       <div class="panel-heading">
+       <h5 align="left"><%= t('.sign_in', :default => "My Details") %></h5>
+    <div class="panel-body">
+    <div class="row">
+       <div class="col-xs-6">
+        <%= f.label :Title %>
+        <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
+       </div>
+      <div class="col-xs-6">
+        <%= f.label :Forename %>
+        <%= f.text_field :forename1 , class: "form-control" %>
+      </div>
+    </div>
+
+
+<div class="row">
+  <div class="col-xs-6">
+       <%= f.label :Middle_Name %><br>
+       <%= f.text_field :forename2 , class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :Middle_Name %><br>
-    <%= f.text_field :forename2 , class: "form-control" %>
+  <div class="col-xs-6">
+      <%= f.label :Surname %><br>
+      <%= f.text_field :surname , class: "form-control" %>
   </div>
- <div class="form-group">
-    <%= f.label :Surname %><br>
-    <%= f.text_field :surname , class: "form-control" %>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+     <%= f.label :Gender %><br>
+     <%= f.select :female, options_for_select([['Male'],['Female']], params[:gender]),{}, { class: "form-control"} %>
   </div>
- <div class="form-group">
-    <%= f.label :Address_Line1,"Address Line 1" %><br>
-    <%= f.text_field :addressLine1 , class: "form-control" %>
+  <div class="col-xs-6">
+     <%= f.label :dob,"Date of Birth" %><br>
+     <%= f.date_select :dob, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
+     [:day, :month, :year], class: 'date-select' %>
   </div>
-  <div class="form-group">
-    <%= f.label :Address_Line2,"Address Line 2" %><br>
-    <%= f.text_field :addressLine2, class: "form-control" %>
+ </div>
+ </div>
+ </div>
+</div>
+
+   <div class="panel panel-default">
+     <div class="panel-heading">
+     <h5 align="left"><%= t('.sign_in', :default => "Contact") %></h5>
+    <div class="panel-body">
+    <div class="row">
+       <div class="col-xs-6">
+        <%= f.label :Address_Line1,"Address Line 1" %><br>
+        <%= f.text_field :addressLine1 , class: "form-control" %>
+       </div>
+      <div class="col-xs-6">
+        <%= f.label :Address_Line2,"Address Line 2" %><br>
+        <%= f.text_field :addressLine2, class: "form-control" %>
+      </div>
+      </div>
+<div class="row">
+  <div class="col-xs-6">
+       <%= f.label :Town %><br>
+       <%= f.text_field :town , class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :Town %><br>
-    <%= f.text_field :town , class: "form-control" %>
+  <div class="col-xs-6">
+      <%= f.label :Postcode %><br>
+      <%= f.text_field :postcode , class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :Postcode %><br>
-    <%= f.text_field :postcode , class: "form-control" %>
-  </div>
- <div class="form-group">
+</div>
+<div class="row">
+  <div class="col-xs-6">
     <%= f.label :Second_Email,"Second Email" %><br>
     <%= f.text_field :secondEmail , class: "form-control" %>
   </div>
- <div class="form-group">
-    <%= f.label :Personal_website_Url,"Personal Website Url" %><br>
-    <%= f.text_field :personalUrl , class: "form-control" %>
+  <div class="col-xs-6">
+     <%= f.label :Personal_website_Url,"Personal Website Url" %><br>
+     <%= f.text_field :personalUrl , class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :Photo_Upload %><br>
-    <%= f.file_field :photo , class: "form-control" %>
+ </div>
+      <div class="row">
+  <div class="col-xs-4">
+     <%= f.label :Mobile_Number, "Mobile Number" %><br>
+     <%= f.text_field :mobile , class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label :CV_Upload %><br>
-    <%= f.file_field :mycv , class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :Gender %><br>
-    <%= f.select :female, options_for_select([['Male'],['Female']], params[:gender]),{}, { class: "form-control"} %>
-  </div>
-  <div class="form-group">
-    <%= f.label :PostcodeStart %><br>
-    <%= f.text_field :postcodeStart , class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :Authority_To_Work_Statement,"Autority To Work Statement" %><br>
-    <%= f.text_area :authorityToWorkStatement , class: "form-control" %>
-   </div>
-  <div class="form-group">
-    <%= f.label :Contact_Preference,"Contact Preference" %><br>
-    <%= f.select :contactPreference, options_for_select([['Mobile'],['Landline'],['Email']], params[:gender]),{}, { class: "form-control"} %>
-  </div>
-  <div class="form-group">
-    <%= f.label :Educational_Levels,"Education Levels" %><br>
-    <%= f.number_field :EducationalLevels_idEducatonLevel, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :No_Of_Gcses,"No of GCSEs" %><br>
-    <%= f.number_field :noOfGcses, class: "form-control" %>
-  </div>
-   <div class="form-group">
-    <%= f.label :Gcse_English_Grade,"GCSE Englsih Grade" %><br>
-    <%= f.text_field :gecseEnglishGrade , class: "form-control" %>
-  </div>
-   <div class="form-group">
-    <%= f.label :Gcse_Maths_Grade,"GCSE Maths Grade" %><br>
-    <%= f.text_field :gcseMathsGrade , class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :Five_Or_More_Gcses, "Five or more GCSEs" %><br>
-    <%= f.number_field :fiveOrMoreGcses , class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :No_Of_A_levels, "No of 'A' Levels" %><br>
-    <%= f.number_field :noOfAlevels, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :Ucas_Points, "UCAS Points" %><br>
-    <%= f.number_field :ucasPoints , class: "form-control" %>
-  </div>
- <div class="form-group">
-    <%= f.label :Student_Status, "Student Status" %><br>
-    <%= f.text_field :studentStatus , class: "form-control" %>
-  </div>
- <div class="form-group">
-    <%= f.label :Mobile_Number, "Mobile Number" %><br>
-    <%= f.text_field :mobile , class: "form-control" %>
-  </div>
-  <div class="form-group">
+  <div class="col-xs-4">
     <%= f.label :Landline_Number,"Landline Number" %><br>
     <%= f.text_field :landline , class: "form-control" %>
   </div>
-    <div class="form-group">
-    <%= f.label :dob,"Date of Birth" %><br>
-    <%= f.date_select :dob, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
-    [:day, :month, :year], class: "form-control" %>
+  <div class="col-xs-4">
+    <%= f.label :Contact_Preference,"Contact Preference" %><br>
+    <%= f.select :contactPreference, options_for_select([['Mobile'],['Landline'],['Email']], params[:contactPreference]),{},
+    { class: "form-control"} %>
   </div>
-  <div class="form-group">
-    <%= f.label :Penalty_Points, "Penalty Points" %><br>
-    <%= f.number_field :penaltyPoints , class: "form-control" %>
+</div>
+   <div class="row">
+    <div class="col-xs-6">
+    <%= f.label :Photo_Upload %><br>
+    <%= f.file_field :photo , class: "form-control" %>
   </div>
- <div class="form-group">
+    <div class="col-xs-6">
+    <%= f.label :CV_Upload %><br>
+    <%= f.file_field :mycv , class: "form-control" %>
+  </div>
+ </div>
+ </div>
+ </div>
+</div>
+   <div class="panel panel-default">
+     <div class="panel-heading">
+     <h5 align="left"><%= t('.sign_in', :default => "Basic Education") %></h5>
+    <div class="panel-body">
+    <div class="row">
+       <div class="col-xs-4">
+       <%= f.label :Educational_Levels,"Education Levels" %><br>
+       <%= f.number_field :EducationalLevels_idEducatonLevel, class: "form-control" %>
+       <br/>
+        <%= f.label :Five_Or_More_Gcses, "Five or more GCSEs" %><br>
+        <%= f.number_field :fiveOrMoreGcses , class: "form-control" %>
+        <br/>
+        <%= f.label :No_Of_A_levels, "No of 'A' Levels" %><br>
+        <%= f.number_field :noOfAlevels, class: "form-control" %>
+        <br/>
+       </div>
+      <div class="col-xs-4">
+        <%= f.label :No_Of_Gcses,"No of GCSEs" %><br>
+        <%= f.number_field :noOfGcses, class: "form-control" %>
+         <br/>
+        <%= f.label :Gcse_English_Grade,"GCSE Englsih Grade" %><br>
+        <%= f.text_field :gecseEnglishGrade , class: "form-control" %>
+         <br/>
+        <%= f.label :Gcse_Maths_Grade,"GCSE Maths Grade" %><br>
+        <%= f.text_field :gcseMathsGrade , class: "form-control" %>
+        <br/>
+      </div>
+       <div class="col-xs-4">
+        <%= f.label :Ucas_Points, "UCAS Points" %><br>
+        <%= f.number_field :ucasPoints , class: "form-control" %>
+        <br/>
+        <%= f.label :Student_Status, "Student Status" %><br>
+        <%= f.text_field :studentStatus , class: "form-control" %>
+        <br/>
+        <%= f.label :Penalty_Points, "Penalty Points" %><br>
+        <%= f.number_field :penaltyPoints , class: "form-control" %>
+
+      </div>
+      </div>
+   <div class="row">
+    <div class="col-xs-12">
+    <%= f.label :Authority_To_Work_Statement,"Autority To Work Statement" %><br>
+    <%= f.text_area :authorityToWorkStatement , class: "form-control" %>
+  </div>
+
+ </div>
+ </div>
+ </div>
+</div>
+
+ <div class="col-xs-12">
     <%= f.submit  class: "btn btn-primary" %>
+    <br/> <br/>
+    <%= link_to 'Back', root_path %>
   </div>
-  <div/>
 <% end %>
-<%= link_to 'Back', root_path %>
+
+
 

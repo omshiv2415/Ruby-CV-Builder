@@ -100,12 +100,17 @@ a:hover {
 /* resume */
 .my-caption {
   border-bottom: 1px dotted #389B17;
+  border-top: 1px dotted #389B17;
   color: #389B17;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 400;
   line-height: normal;
-  margin-top: 15px;
+  margin-top: 11px;
   text-transform: uppercase;
+}
+.btn{
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .wrapper > .my-caption {
   margin-bottom: 11px;

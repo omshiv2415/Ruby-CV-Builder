@@ -6,7 +6,17 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.json
   def index
-    @skills = Skill.all
+
+  if current_user.try(:admin?)
+        if params[:search]
+           @skills = Skill.all.order("created_at DESC")
+          else
+           @skills = current_user.skills.order("skillType ASC")
+        end
+      else
+         flash[:danger] = "You must admin to perform this activity"
+         redirect_to root_path
+    end
   end
 
   # GET /skills/1

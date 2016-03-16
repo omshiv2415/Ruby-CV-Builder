@@ -15,11 +15,11 @@ class Person < ActiveRecord::Base
   validates :addressLine2, presence: true, length: {minimum:1, maximum:50}
   validates :town, presence: true, length: {minimum:1, maximum:50}
   validates :postcode, presence: true, length: {minimum:1, maximum:15}
-  validates :secondEmail, presence: true, length: {minimum:1, maximum:15}
+  validates :secondEmail, presence: true, length: {minimum:1, maximum:51}
   validates :personalUrl, presence: true, length: {minimum:1, maximum:50}
   validates :female, presence: true, length: {minimum:1, maximum:15}
   validates :postcodeStart, presence: true, length: {minimum:1, maximum:15}
-  validates :authorityToWorkStatement, presence: true, length: {minimum:1, maximum:750}
+  validates :authorityToWorkStatement, presence: true, length: {minimum:1, maximum:1750}
   validates :contactPreference, presence: true, length: {minimum:1, maximum:15}
   validates :noOfGcses, presence: true, length: {minimum:1, maximum:15}
   validates :gecseEnglishGrade, presence: true, length: {minimum:1, maximum:50}
@@ -31,7 +31,7 @@ class Person < ActiveRecord::Base
   validates :landline, presence: true, length: {minimum:1, maximum:15}
   validates :dob, presence: true, length: {minimum:1, maximum:50}
   validates :penaltyPoints, presence: true, length: {minimum:1, maximum:15}
-  validates :mycv, presence: true, length: {minimum:1, maximum:15}
+
 
   has_attached_file :photo,styles: { thumb: ["64x64#", :jpg],
                             original: ['300x300>', :jpg] },
