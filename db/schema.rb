@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407210205) do
+ActiveRecord::Schema.define(version: 20160407210919) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(version: 20160407210205) do
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.integer  "user_id"
+    t.integer  "person_id"
   end
+
+  add_index "educatioal_qualifications", ["person_id"], name: "index_educatioal_qualifications_on_person_id"
 
   create_table "experiences", force: :cascade do |t|
     t.integer  "idExperiences"
@@ -48,7 +51,10 @@ ActiveRecord::Schema.define(version: 20160407210205) do
     t.integer  "user_id"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.integer  "person_id"
   end
+
+  add_index "experiences", ["person_id"], name: "index_experiences_on_person_id"
 
   create_table "jobpreferences", force: :cascade do |t|
     t.string   "jobtitle"
@@ -60,7 +66,10 @@ ActiveRecord::Schema.define(version: 20160407210205) do
     t.string   "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "person_id"
   end
+
+  add_index "jobpreferences", ["person_id"], name: "index_jobpreferences_on_person_id"
 
   create_table "people", force: :cascade do |t|
     t.string   "title",                             limit: 10
@@ -144,9 +153,11 @@ ActiveRecord::Schema.define(version: 20160407210205) do
     t.datetime "updated_at",                null: false
     t.string   "skillType"
     t.integer  "people_id"
+    t.integer  "person_id"
   end
 
   add_index "skills", ["people_id"], name: "index_skills_on_people_id"
+  add_index "skills", ["person_id"], name: "index_skills_on_person_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
