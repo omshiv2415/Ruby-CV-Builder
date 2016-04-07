@@ -13,6 +13,8 @@ class WelcomeController < ApplicationController
            @skills = current_user.skills.all.order(:skillType)
            @experiences = current_user.experiences
            @educatioal_qualifications = current_user.educatioal_qualifications.all.order(created_at: :desc)
+           @jobpreferences = current_user.jobpreference
+           @referees = current_user.referees
         end
 	 	end
   end
@@ -21,6 +23,8 @@ def show
    @skills = current_user.skills
    @experiences = current_user.experiences
    @educatioal_qualifications = current_user.educatioal_qualifications.all
+   @jobpreferences = current_user.jobpreference
+   @referees = current_user.referees
     respond_to do |format|
       format.html
       format.pdf do

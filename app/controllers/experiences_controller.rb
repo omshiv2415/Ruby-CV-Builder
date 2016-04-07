@@ -6,10 +6,15 @@ class ExperiencesController < ApplicationController
 
   # GET /experiences
   # GET /experiences.json
-  def index
-    @experiences = Experience.all
-  end
 
+ def index
+    if current_user.try(:admin?)
+       @experiences = Experience.all
+      else
+         flash[:danger] = "You must be an admin to perform this activity"
+         redirect_to root_path
+    end
+  end
   # GET /experiences/1
   # GET /experiences/1.json
   def show
@@ -35,7 +40,7 @@ class ExperiencesController < ApplicationController
     @experience.user = current_user
     respond_to do |format|
       if @experience.save
-        format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Experience was successfully created.' }
         format.json { render :show, status: :created, location: @experience }
       else
         format.html { render :new }
@@ -49,7 +54,7 @@ class ExperiencesController < ApplicationController
   def update
     respond_to do |format|
       if @experience.update(experience_params)
-        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Experience was successfully updated.' }
         format.json { render :show, status: :ok, location: @experience }
       else
         format.html { render :edit }
@@ -63,7 +68,7 @@ class ExperiencesController < ApplicationController
   def destroy
     @experience.destroy
     respond_to do |format|
-      format.html { redirect_to experiences_url, notice: 'Experience was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Experience was successfully deleted.' }
       format.json { head :no_content }
     end
   end

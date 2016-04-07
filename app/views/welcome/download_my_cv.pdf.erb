@@ -28,21 +28,17 @@
 			<link rel="stylesheet" href="css/font-awesome-ie7.min.css">
 		<![endif]-->
 	</head>
-
 	<body>
-
-    <br/> <br/>
 		<div class="container-fluid wrapper">
-
 			<!-- Heading
 			================================================== -->
 			<div class="row-fluid heading">
 				<div class="span8">
 					<%= wicked_pdf_image_tag(@people.photo,:class => "my-picture1")%>
 					<h1 class="my-name"> <%= @people.forename1 %></h1>
+          <br/>
 					<h2 class="my-profession">About me</h2>
 					<p align="justify" class="my-message">
-						<i class="icon-comment-alt"></i>&nbsp;
             <%= @people.authorityToWorkStatement %>
           </p>
 				</div>
@@ -50,47 +46,62 @@
 			<!-- Resume
 			================================================== -->
 			 <div class="row-fluid resume">
-       <div class="span4">
-       <h3 class="my-caption">Education</h3>
-       <% @educatioal_qualifications.each do |qualification| %>
-
-       <h4 class="my-activity"> <%= qualification.qualificationType %>
-       in <%= qualification.courseName %>  (<%= qualification.result %>) </h4>
-       <h4 class="my-activity"> <%= qualification.mainSubject %></h4>
-       <h4 class="my-activity">Level <%= qualification.EducationalLevels_idEducationLevel %></h4>
-       <h5 class="my-venture"> <%= qualification.nameOfInstitutions %> <span> <%= qualification.yearObtained %> </span></h5>
-       <h4 class="my-activity"><%= qualification.country %></h4>
-
-       <hr/>
-    <% end %>
-        <div class="span4">
-        <h3 class="my-caption">Skills</h3>
-        <br>
- <table class="table table-striped table-bordered table-condensed">
-      <thead>
-        <thead>
-          <tr>
+            <div class="span4">
+       <table class="table table-striped table-bordered table-condensed">
+         <br/>
+         <thead>
+            <tr >
             <th> Skill Type </th>
             <th> Skill Name</th>
             <th> Skill Level (1 to 10) </th>
-          </tr>
+            </tr>
         </thead>
         <tbody>
          <% @skills.each do |skill| %>
             <tr>
               <td colspan="1"><%= skill.skillType %></td>
               <td colspan="1"><%= skill.skillName %></td>
-              <td colspan="1"><%= progress_bar skill.skillLevel.to_f * 100/1000, alternative: 'success' %></td>
-
+              <td colspan="1"><%= progress_bar skill.skillLevel.to_f * 100/1000,
+              alternative: 'success' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+       <div class="span4">
+       <% @educatioal_qualifications.each do |qualification| %>
+       <h4 class="my-activity"> <%= qualification.qualificationType %>
+       in <%= qualification.courseName %>  (<%= qualification.result %>) </h4>
+       <h4 class="my-activity"> <%= qualification.mainSubject %></h4>
+       <h4 class="my-activity">Level <%= qualification.EducationalLevels_idEducationLevel %></h4>
+       <h5 class="my-venture"> <%= qualification.nameOfInstitutions %> <span>
+        <%= qualification.yearObtained %> </span></h5>
+       <h4 class="my-activity"><%= qualification.country %></h4>
+       <hr/>
+    <% end %>
+        <div class="span4">
+       <table class="table table-striped table-bordered table-condensed">
+         <br/>
+         <thead>
+            <tr >
+            <th> Skill Type </th>
+            <th> Skill Name</th>
+            <th> Skill Level (1 to 10) </th>
+            </tr>
+        </thead>
+        <tbody>
+         <% @skills.each do |skill| %>
+            <tr>
+              <td colspan="1"><%= skill.skillType %></td>
+              <td colspan="1"><%= skill.skillName %></td>
+              <td colspan="1"><%= progress_bar skill.skillLevel.to_f * 100/1000,
+              alternative: 'success' %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
 				<!-- column 1 -->
 				<div class="span4">
-					<h3 class="my-caption">Employment</h3>
           <% @experiences.each do |experience| %>
-
 					<h4 class="my-activity"><%= experience.otherJobTitle %></h4>
 					<h5 class="my-venture"><%= experience.employerName %></h5>
           <h5  class="my-venture"> Start <span> <%= experience.dateStarted.strftime("%b %Y") %>  </span></h5>
@@ -100,43 +111,21 @@
           <hr/>
           <% end %>
 				</div>
-
-
-					<h3 class="my-caption">Foreign Languages</h3>
-					<h4 class="my-skill">
-						Language I
-						<span>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star-empty"></i>
-						</span>
-					</h4>
-					<h4 class="my-skill">
-						Language II
-						<span>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star-empty"></i>
-						</span>
-					</h4>
-					<h4 class="my-skill">
-						Language III
-						<span>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star"></i>
-							<i class="icon-star-empty"></i>
-							<i class="icon-star-empty"></i>
-						</span>
-					</h4>
-				</div>
-
 			<!-- end of resume -->
+          	<!-- column 1 -->
+				<div class="span4">
 
+          <% @jobpreferences.each do |jobpreference| %>
+
+					<h4 class="my-activity"><%= jobpreference.job_title %></h4>
+          <h4 class="my-activity"><%= jobpreference.job_role %></h4>
+          <h4 class="my-activity"><%= jobpreference.location %></h4>
+          <h4 class="my-activity"><%= jobpreference.happy_to_relocate %></h4>
+
+          <hr/>
+          <% end %>
+				</div>
+			<!-- end of resume -->
 			<!-- Contact
 			================================================== -->
 			<div class="row-fluid contact">
@@ -153,6 +142,7 @@
 				<!--column 2 -->
 				<div class="span4">
 					<h3 class="my-caption">Contact Me</h3>
+
 					<h4 class="my-info">
 						<i class="icon-phone"></i> Phone(Landline)
 						<span><%= @people.landline %></span>
@@ -170,7 +160,7 @@
 					<h4 class="my-info">
 						<i class="icon-globe"></i> Website
 						<span>
-							<a href="#" target="_blank"><%= @people.personalUrl %></a>
+							<%= link_to @people.personalUrl  %>
 						</span>
 					</h4>
 
@@ -193,7 +183,7 @@
 					<h4 class="my-info">
 						<i class="icon-twitter"></i>
 						<span>
-							<a href="#" target="_blank">Twitter</a>
+							<a href="#" target="_blank">GitHub</a>
 						</span>
 					</h4>
 					<h4 class="my-info">
@@ -204,38 +194,25 @@
             </h4>
           </div>
 				<!--column 3 -->
+			 	<!-- column 1 -->
 				<div class="span4">
 
-					<h3 class="my-caption">References</h3>
-					<h4 class="my-info">
-						<i class="icon-google-plus"></i>
-						<span>
-							<a href="#" target="_blank">Google+</a>
-						</span>
-					</h4>
-					<h4 class="my-info">
-						<i class="icon-facebook"></i>
-						<span>
-							<a href="#" target="_blank">facebook</a>
-						</span>
-					</h4>
-					<h4 class="my-info">
-						<i class="icon-twitter"></i>
-						<span>
-							<a href="#" target="_blank">Twitter</a>
-						</span>
-					</h4>
-					<h4 class="my-info">
-						<i class="icon-linkedin"></i>
-						<span>
-							<a href="#" target="_blank">LinkedIn</a>
-						  </span>
-            </h4>
-          </div>
+          <% @referees.each do |referee| %>
+
+					<h4 class="my-activity"><%= referee.title %> <%= referee.forename %>
+          <%= referee.surname %></h4>
+          <h4 class="my-activity"><%= referee.email %></h4>
+          <h4 class="my-activity"><%= referee.contactPhone %></h4>
+          <h4 class="my-activity"><%= referee.relationship %></h4>
+          <h4 class="my-activity"><%= referee.permissionToContact %></h4>
+          <hr/>
+          <% end %>
+			  	</div>
+        	</div>
         </div><!-- end of contact -->
       </div><!-- end of container -->
      </div>
    </div>
-
-	</body>
+ </div>
+</body>
 </html>

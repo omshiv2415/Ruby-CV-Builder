@@ -6,7 +6,6 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.json
   def index
-
   if current_user.try(:admin?)
         if params[:search]
            @skills = Skill.all.order("created_at DESC")
@@ -14,7 +13,7 @@ class SkillsController < ApplicationController
            @skills = current_user.skills.order("skillType ASC")
         end
       else
-         flash[:danger] = "You must admin to perform this activity"
+         flash[:danger] = "You must be an admin to perform this activity"
          redirect_to root_path
     end
   end
@@ -45,7 +44,7 @@ class SkillsController < ApplicationController
     @skill.user = current_user
     respond_to do |format|
       if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Skill was successfully created.' }
         format.json { render :show, status: :created, location: @skill }
       else
         format.html { render :new }
@@ -59,7 +58,7 @@ class SkillsController < ApplicationController
   def update
     respond_to do |format|
       if @skill.update(skill_params)
-        format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @skill }
       else
         format.html { render :edit }
@@ -73,7 +72,7 @@ class SkillsController < ApplicationController
   def destroy
     @skill.destroy
     respond_to do |format|
-      format.html { redirect_to skills_url, notice: 'Skill was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Skill was successfully deleted.' }
       format.json { head :no_content }
     end
   end

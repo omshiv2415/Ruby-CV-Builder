@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  jobtitle: MyString
+  job_title: MyString
+  job_role: 
+  role_type: MyString
+  location: MyString
+  happy_to_relocate: MyString
+  user_id: MyString
+
+two:
+  jobtitle: MyString
+  job_title: MyString
+  job_role: 
+  role_type: MyString
+  location: MyString
+  happy_to_relocate: MyString
+  user_id: MyString

@@ -18,7 +18,7 @@
     <%= f.label :Skill_Level %><br>
     <%= f.select :skillLevel, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10']], params[:title]),{}, { class: "form-control"} %>
   </div>
-  <div class="actions">
+  <div class="actions form-group">
     <%= f.submit %>
   </div>
 <% end %>

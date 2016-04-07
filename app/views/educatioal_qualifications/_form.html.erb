@@ -8,54 +8,44 @@
 
 	<div class="panel-body">
     <div class="form-group">
-    <%= f.label :qualificationType %><br>
+    <%= f.label :qualificationType,"Qualification Type"%><br>
     <%= f.text_field :qualificationType , class: "form-control input-sm" %>
   </div>
     <div class="form-group">
-    <%= f.label :courseName %><br>
+    <%= f.label :courseName, "Course Name" %><br>
     <%= f.text_field :courseName, class: "form-control" %>
   </div>
    <div class="form-group">
-    <%= f.label :EducationalLevels_idEducationLevel %><br>
+    <%= f.label :EducationalLevels_idEducationLevel,"Education Level" %><br>
      <%= f.select :EducationalLevels_idEducationLevel , options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8']], params[:title]),{}, { class: "form-control"} %>
      </div>
-   <div class="form-group">
-    <%= f.label :vocational %><br>
-    <%= f.text_field :vocational, class: "form-control" %>
-  </div>
+
     <div class="form-group">
-    <%= f.label :mainSubject %><br>
+    <%= f.label :mainSubject,"Main Subject" %><br>
     <%= f.text_field :mainSubject, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :nameOfInstitutions %><br>
+  <div class="form-group">
+    <%= f.label :nameOfInstitutions, "Name of Institutions" %><br>
     <%= f.text_field :nameOfInstitutions , class: "form-control" %>
   </div>
     <div class="form-group">
-    <%= f.label :country %><br>
+    <%= f.label :country, "Country" %><br>
     <%= f.text_field :country , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :yearObtained %><br>
+  <div class="form-group">
+    <%= f.label :yearObtained, "Year of Obtained"%><br>
     <%= f.date_select :yearObtained , class: "form-control" %>
   </div>
    <div class="form-group">
-    <%= f.label :result %><br>
+    <%= f.label :result, "Result" %><br>
     <%= f.text_field :result, class: "form-control" %>
   </div>
    <div class="form-group">
-    <%= f.label :thesesTitle %><br>
+    <%= f.label :thesesTitle,"Theses Title" %><br>
     <%= f.text_field :thesesTitle, class: "form-control" %>
   </div>
-    <div class="form-group">
-    <%= f.label :verified %><br>
-    <%= f.number_field :verified , class: "form-control" %>
-  </div>
-    <div class="form-group">
-    <%= f.label :howVerified %><br>
-    <%= f.text_field :howVerified , class: "form-control" %>
-  </div>
-  <div class="actions">
+
+  <div class="actions form-group">
     <%= f.submit %>
   </div>
 <% end %>

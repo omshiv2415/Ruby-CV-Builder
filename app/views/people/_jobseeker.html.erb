@@ -6,7 +6,18 @@
   <div class="col-lg-6">
     <div class="input-group">
       <%= form_tag(people_path, :method => "get") do %>
-      <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Job Seeker" %>
+      <%= text_field_tag :search_skill, params[:search_skill], class: "form-control", placeholder: "Search by Skill" %>
+      <span class="input-group-btn">
+        <br/>
+        <%= submit_tag "Search", class: 'btn btn-default' %>
+      </span>
+      <% end %>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+    <div class="input-group">
+      <%= form_tag(people_path, :method => "get") do %>
+      <%= text_field_tag :search_exp, params[:search_exp], class: "form-control", placeholder: "Search by Job title" %>
       <span class="input-group-btn">
         <br/>
         <%= submit_tag "Search", class: 'btn btn-default' %>

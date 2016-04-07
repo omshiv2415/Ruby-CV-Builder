@@ -5,10 +5,15 @@ class EducatioalQualificationsController < ApplicationController
 	before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /educatioal_qualifications
   # GET /educatioal_qualifications.json
-  def index
-    @educatioal_qualifications = EducatioalQualification.all
-  end
 
+ def index
+    if current_user.try(:admin?)
+       @educatioal_qualifications = EducatioalQualification.all
+      else
+         flash[:danger] = "You must be an admin to perform this activity"
+         redirect_to root_path
+    end
+  end
   # GET /educatioal_qualifications/1
   # GET /educatioal_qualifications/1.json
   def show
@@ -21,7 +26,6 @@ class EducatioalQualificationsController < ApplicationController
      redirect_to edit_educatioal_qualification_path(current_user.educatioal_qualifications.first)
     end
   end
-
   # GET /educatioal_qualifications/1/edit
   def edit
   end
@@ -33,7 +37,7 @@ class EducatioalQualificationsController < ApplicationController
     @educatioal_qualification.user = current_user
     respond_to do |format|
       if @educatioal_qualification.save
-        format.html { redirect_to @educatioal_qualification, notice: 'Educatioal qualification was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Educatioal qualification was successfully created.' }
         format.json { render :show, status: :created, location: @educatioal_qualification }
       else
         format.html { render :new }
@@ -41,13 +45,12 @@ class EducatioalQualificationsController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /educatioal_qualifications/1
   # PATCH/PUT /educatioal_qualifications/1.json
   def update
     respond_to do |format|
       if @educatioal_qualification.update(educatioal_qualification_params)
-        format.html { redirect_to @educatioal_qualification, notice: 'Educatioal qualification was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Educatioal qualification was successfully updated.' }
         format.json { render :show, status: :ok, location: @educatioal_qualification }
       else
         format.html { render :edit }
@@ -55,13 +58,12 @@ class EducatioalQualificationsController < ApplicationController
       end
     end
   end
-
   # DELETE /educatioal_qualifications/1
   # DELETE /educatioal_qualifications/1.json
   def destroy
     @educatioal_qualification.destroy
     respond_to do |format|
-      format.html { redirect_to educatioal_qualifications_url, notice: 'Educatioal qualification was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Educatioal qualification was successfully deleted.' }
       format.json { head :no_content }
     end
   end

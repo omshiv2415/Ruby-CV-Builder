@@ -5,18 +5,26 @@ class PeopleController < ApplicationController
 	before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /people
   # GET /people.json
+
   def index
     if current_user.try(:admin?)
-        if params[:search]
-          @people = Person.search(params[:search]).order("created_at DESC")
-          else
-          @people = Person.order("created_at DESC")
-        end
+            if params.has_key?(:search_jobpreferences)
+             @people = Person.all.select("*").joins(:jobpreferences)
+              .where('jobpreferences.job_tile LIKE ?', "%#{params[:search_jobseeker]}%")
+            elsif params.has_key?(:search_exp)
+             @people = Person.all.select("*").joins(:experience)
+              .where('experiences.otherJobTitle LIKE ?', "%#{params[:search_exp]}%")
+            elsif params.has_key?(:search_skill)
+             @people = Person.all.select("*").joins(:skill)
+              .where('skills.skillName LIKE ?', "%#{params[:search_skill]}%")
+            else
+               @people = Person.order("created_at DESC")
+            end
+
       else
-         flash[:danger] = "You must admin to perform this activity"
+         flash[:danger] = "You must be an admin to perform this activity"
          redirect_to root_path
     end
-
   end
 
   # GET /people/1
@@ -53,7 +61,7 @@ class PeopleController < ApplicationController
     @person.user = current_user
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Person was successfully created.' }
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new }
@@ -81,7 +89,7 @@ class PeopleController < ApplicationController
   def destroy
     @person.destroy
     respond_to do |format|
-      format.html { redirect_to people_url, notice: 'Person was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Person was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Jobtitle:</strong>
+  <%= @jobpreference.jobtitle %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @jobpreference.job_title %>
+</p>
+
+<p>
+  <strong>Job role:</strong>
+  <%= @jobpreference.job_role %>
+</p>
+
+<p>
+  <strong>Role type:</strong>
+  <%= @jobpreference.role_type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @jobpreference.location %>
+</p>
+
+<p>
+  <strong>Happy to relocate:</strong>
+  <%= @jobpreference.happy_to_relocate %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @jobpreference.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_jobpreference_path(@jobpreference) %> |
+<%= link_to 'Back', jobpreferences_path %>

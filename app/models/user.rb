@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 	has_many :experiences
 	has_many :referees
 	has_many :skills
-  accepts_nested_attributes_for :people, :educatioal_qualifications,:experiences,:referees,:skills
+  has_many :jobpreference
+
+  accepts_nested_attributes_for :people, :educatioal_qualifications,:experiences,:referees,:skills, :jobpreference
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 end

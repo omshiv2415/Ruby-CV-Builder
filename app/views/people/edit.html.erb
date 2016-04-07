@@ -5,17 +5,19 @@
    <div class="panel panel-default">
 	  <div class="panel-heading">
      <h4 align="center"><%= t('.sign_in', :default => "Personal Deatails") %></h4>
-    <hr/>
+    </div>
 	<div class="panel-body">
-   <div class="panel panel-default">
+   <div class="panel panel-info">
        <div class="panel-heading">
-       <h5 align="left"><%= t('.sign_in', :default => "My Details") %></h5>
+       <h5 align="left">My Details</h5>
+
     <div class="panel-body">
     <div class="row">
        <div class="col-xs-6">
         <%= f.label :Title %>
         <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
        </div>
+
       <div class="col-xs-6">
         <%= f.label :Forename %>
         <%= f.text_field :forename1 , class: "form-control" %>
@@ -48,9 +50,10 @@
  </div>
 </div>
 
-   <div class="panel panel-default">
+   <div class="panel panel-info">
      <div class="panel-heading">
-     <h5 align="left"><%= t('.sign_in', :default => "Contact") %></h5>
+     <h5 align="left">Contact</h5>
+     </div>
     <div class="panel-body">
     <div class="row">
        <div class="col-xs-6">
@@ -109,10 +112,11 @@
  </div>
  </div>
  </div>
-</div>
-   <div class="panel panel-default">
+
+   <div class="panel panel-info">
      <div class="panel-heading">
-     <h5 align="left"><%= t('.sign_in', :default => "Basic Education") %></h5>
+     <h5 align="left">Basic Education </h5>
+     </div>
     <div class="panel-body">
     <div class="row">
        <div class="col-xs-4">
@@ -165,6 +169,7 @@
     <br/> <br/>
     <%= link_to 'Back', root_path %>
   </div>
+</div>  </div>
 <% end %>
 
 

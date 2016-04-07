@@ -50,6 +50,36 @@
 			<!-- Resume
 			================================================== -->
 			 <div class="row-fluid resume">
+            <div class="span4">
+         <h5 class="my-caption my-venture">GCSE<span><%= link_to "Add",new_skill_path,
+        {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
+       <table class="table table-striped table-bordered table-condensed">
+         <br/>
+         <thead>
+            <tr >
+            <th> Skill Type </th>
+            <th> Skill Name</th>
+            <th> Skill Level (1 to 10) </th>
+            <th> Edit</th>
+            <th> Delete </th>
+            </tr>
+        </thead>
+        <tbody>
+         <% @skills.each do |skill| %>
+            <tr>
+              <td colspan="1"><%= skill.skillType %></td>
+              <td colspan="1"><%= skill.skillName %></td>
+              <td colspan="1"><%= progress_bar skill.skillLevel.to_f * 100/1000, alternative: 'success' %></td>
+              <td align="center" colspan="1">
+              <%= link_to ('<i align="center" class="fa fa-pencil"  ></i> ').html_safe,
+               edit_skill_path(skill), title: 'Edit Skill' %></td>
+              <td align="center" colspan="1">
+              <%= link_to ('<i align="center" class="fa fa-trash"  ></i> ').html_safe, skill, method: :delete,
+              data: { confirm: 'Are you sure?' }, title: 'Edit Skill' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
        <div class="span4">
          <h5 class="my-caption my-venture">Education<span><%= link_to "Add",new_educatioal_qualification_path,
          {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
@@ -88,7 +118,8 @@
               <td colspan="1"><%= skill.skillName %></td>
               <td colspan="1"><%= progress_bar skill.skillLevel.to_f * 100/1000, alternative: 'success' %></td>
               <td align="center" colspan="1">
-              <%= link_to ('<i align="center" class="fa fa-pencil"  ></i> ').html_safe, edit_skill_path(skill), title: 'Edit Skill' %></td>
+              <%= link_to ('<i align="center" class="fa fa-pencil"  ></i> ').html_safe,
+               edit_skill_path(skill), title: 'Edit Skill' %></td>
               <td align="center" colspan="1">
               <%= link_to ('<i align="center" class="fa fa-trash"  ></i> ').html_safe, skill, method: :delete,
               data: { confirm: 'Are you sure?' }, title: 'Edit Skill' %></td>
@@ -109,6 +140,26 @@
           <h5 class="my-venture"> Finish <span> <%= experience.dateFinished.strftime("%b %Y") %>  </span></h5>
           <h4 class="my-activity"> Key Duties </h4>
 			    <p class="my-specific"><%= experience.keyDuties %></p>
+          <h5 class="my-venture">  <span><%= link_to ('<i align="center" class="fa fa-trash"  ></i> ').html_safe,
+           experience, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete Experience' %></span></h5>
+          <hr/>
+
+          <% end %>
+				</div>
+			<!-- end of resume -->
+          	<!-- column 1 -->
+				<div class="span4">
+          <h5 class="my-caption my-venture">Job Preferences<span><%= link_to "Add",new_jobpreference_path,
+          {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
+          <% @jobpreferences.each do |jobpreference| %>
+           <h5 class="my-venture"> <span> <%= link_to ('<i align="center" class="fa fa-pencil"  ></i> ').html_safe,
+           edit_jobpreference_path(jobpreference), title: 'Edit Experience' %> </span></h5>
+					<h4 class="my-venture">Job Title: <%= jobpreference.job_title %></h4>
+          <h4 class="my-venture">Role: <%= jobpreference.job_role %></h4>
+          <h4 class="my-venture">Location: <%= jobpreference.location %></h4>
+          <h4 class="my-venture">Happy to relocate: <%= jobpreference.happy_to_relocate %></h4>
+          <h5 class="my-venture">  <span><%= link_to ('<i align="center" class="fa fa-trash"  ></i> ').html_safe,
+           jobpreference, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete Experience' %></span></h5>
           <hr/>
           <% end %>
 				</div>
@@ -172,7 +223,7 @@
 					<h4 class="my-info">
 						<i class="icon-twitter"></i>
 						<span>
-							<a href="#" target="_blank">Twitter</a>
+							<a href="#" target="_blank">GitHub</a>
 						</span>
 					</h4>
 					<h4 class="my-info">
@@ -183,38 +234,29 @@
             </h4>
           </div>
 				<!--column 3 -->
+			 	<!-- column 1 -->
 				<div class="span4">
-
-					<h3 class="my-caption">References</h3>
-					<h4 class="my-info">
-						<i class="icon-google-plus"></i>
-						<span>
-							<a href="#" target="_blank">Google+</a>
-						</span>
-					</h4>
-					<h4 class="my-info">
-						<i class="icon-facebook"></i>
-						<span>
-							<a href="#" target="_blank">facebook</a>
-						</span>
-					</h4>
-					<h4 class="my-info">
-						<i class="icon-twitter"></i>
-						<span>
-							<a href="#" target="_blank">Twitter</a>
-						</span>
-					</h4>
-					<h4 class="my-info">
-						<i class="icon-linkedin"></i>
-						<span>
-							<a href="#" target="_blank">LinkedIn</a>
-						  </span>
-            </h4>
-          </div>
+          <h5 class="my-caption my-venture">References<span><%= link_to "Add",new_referee_path,
+          {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
+          <% @referees.each do |referee| %>
+           <h5 class="my-venture"> <span> <%= link_to ('<i align="center" class="fa fa-pencil"  ></i> ').html_safe,
+           edit_referee_path(referee), title: 'Edit Reference' %> </span></h5>
+					<h4 class="my-activity"><%= referee.title %> <%= referee.forename %>
+          <%= referee.surname %></h4>
+          <h4 class="my-activity"><%= referee.email %></h4>
+          <h4 class="my-activity"><%= referee.contactPhone %></h4>
+          <h4 class="my-activity"><%= referee.relationship %></h4>
+          <h4 class="my-activity"><%= referee.permissionToContact %></h4>
+          <h5 class="my-venture">  <span><%= link_to ('<i align="center" class="fa fa-trash"  ></i> ').html_safe,
+           referee, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete Qualification' %></span></h5>
+          <hr/>
+          <% end %>
+			  	</div>
+        	</div>
         </div><!-- end of contact -->
       </div><!-- end of container -->
      </div>
    </div>
-
-	</body>
+ </div>
+</body>
 </html>

@@ -4,10 +4,15 @@ class Person < ActiveRecord::Base
   has_many :skill
   has_many :experience
   has_many :referee
-
-  accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience, :referee
-
+  has_many :jobpreferences
+  #acts_as_taggable
+  #acts_as_taggable_on :skills
+  #include PgSearch
+  #multisearchable :against => [:skillName, :skillType]
+  accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience, :referee, :jobpreferences
+  #pg_search_scope :quick_search, against: [:skillName, :skillType]
   validates :title, presence: true, length: {minimum:1, maximum:15}
+
   validates :forename1, presence: true, length: {minimum:1, maximum:70}
   validates :forename2, presence: true, length: {minimum:1, maximum:15}
   validates :surname, presence: true, length: {minimum:1, maximum:15}
@@ -31,8 +36,6 @@ class Person < ActiveRecord::Base
   validates :landline, presence: true, length: {minimum:1, maximum:15}
   validates :dob, presence: true, length: {minimum:1, maximum:50}
   validates :penaltyPoints, presence: true, length: {minimum:1, maximum:15}
-
-
   has_attached_file :photo,styles: { thumb: ["64x64#", :jpg],
                             original: ['300x300>', :jpg] },
                             convert_options: { thumb: "-quality 75 -strip",
@@ -44,21 +47,12 @@ class Person < ActiveRecord::Base
   has_attached_file :mycv
   validates_attachment_content_type :mycv, :content_type => [ 'application/pdf','text/plain']
   before_save :user_setup
-
-
 	private
 	def user_setup
 		if self.id.blank?
 			self.id = self.user_id
-			#self.user_id = self.email
 		end
 	end
-
-  def self.search(query)
-  if query
-    where(['forename1 LIKE ? OR surname LIKE ?', "%#{query}%", "%#{query}%"])
-  else
-    self.all
+  def search
   end
-end
 end

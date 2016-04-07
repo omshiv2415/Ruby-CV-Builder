@@ -1,0 +1,32 @@
+<%= render 'shared/errors', obj:@jobpreference %>
+<div class='row'>
+  <%= form_for(@jobpreference, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <div class="col-md-12 col-md-offset-0" >
+   <div class="panel panel-default">
+	  <div class="panel-heading">
+     <h4 align="center"><%= t('.sign_in', :default => "Job Preferences") %></h4>
+	<div class="panel-body">
+   <div class="form-group">
+    <%= f.label :job_title, "Job Title" %><br>
+    <%= f.text_field :job_title, class: "form-control" %>
+  </div>
+   <div class="form-group">
+    <%= f.label :job_role, "Job Role" %><br>
+    <%= f.text_field :job_role , class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :role_type, "Role Type" %><br>
+    <%= f.text_field :role_type, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :location, "Location" %><br>
+    <%= f.text_field :location, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :happy_to_relocate, "Happy to Relocate" %><br>
+    <%= f.text_field :happy_to_relocate, class: "form-control" %>
+  </div>
+  <div class="actions form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

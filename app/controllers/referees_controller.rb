@@ -5,8 +5,14 @@ class RefereesController < ApplicationController
 	before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /referees
   # GET /referees.json
-  def index
-    @referees = Referee.all
+
+   def index
+    if current_user.try(:admin?)
+      @referees = Referee.all
+      else
+         flash[:danger] = "You must be an admin to perform this activity"
+         redirect_to root_path
+    end
   end
 
   # GET /referees/1
@@ -35,7 +41,7 @@ class RefereesController < ApplicationController
     @referee.user = current_user
     respond_to do |format|
       if @referee.save
-        format.html { redirect_to @referee, notice: 'Referee was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Referee was successfully created.' }
         format.json { render :show, status: :created, location: @referee }
       else
         format.html { render :new }
@@ -49,7 +55,7 @@ class RefereesController < ApplicationController
   def update
     respond_to do |format|
       if @referee.update(referee_params)
-        format.html { redirect_to @referee, notice: 'Referee was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Referee was successfully updated.' }
         format.json { render :show, status: :ok, location: @referee }
       else
         format.html { render :edit }
@@ -63,7 +69,7 @@ class RefereesController < ApplicationController
   def destroy
     @referee.destroy
     respond_to do |format|
-      format.html { redirect_to referees_url, notice: 'Referee was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Referee was successfully deleted.' }
       format.json { head :no_content }
     end
   end
