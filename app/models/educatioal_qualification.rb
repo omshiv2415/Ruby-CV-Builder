@@ -11,7 +11,4 @@ class EducatioalQualification < ActiveRecord::Base
   validates :yearObtained, presence: true, length: {minimum:1, maximum:15}
   validates :result, presence: true, length: {minimum:1, maximum:15}
   validates :thesesTitle, presence: true, length: {minimum:1, maximum:50}
-
-
-
 end
