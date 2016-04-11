@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :people, :educatioal_qualifications,:experiences,:referees,:skills, :jobpreference
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+  def country_name
+    country = ISO3166::Country[country_code]
+    country.translations[I18n.locale.to_s] || country.name
+  end
+
 end

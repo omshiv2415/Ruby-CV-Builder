@@ -8,25 +8,25 @@
 	<div class="panel-body">
    <div class="form-group">
     <%= f.label :job_title, "Job Title" %><br>
-    <%= f.text_field :job_title, class: "form-control" %>
+    <%= f.text_field :job_title,:placeholder => "Looking for post as Software Engineer", class: "form-control" %>
   </div>
    <div class="form-group">
     <%= f.label :job_role, "Job Role" %><br>
-    <%= f.text_field :job_role , class: "form-control" %>
+    <%= f.select :job_role, options_for_select([['Senior'],['Junior'],['Graduate'],['Internship']],params[:title]),{}, { class: "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :role_type, "Role Type" %><br>
-    <%= f.text_field :role_type, class: "form-control" %>
+    <%= f.select :role_type, options_for_select([['Full-Time'],['Part-Time'],['Zero Hours Contract'],['Temporary Contract']],params[:role_tytle]),{}, { class: "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :location, "Location" %><br>
-    <%= f.text_field :location, class: "form-control" %>
+    <%= f.select :location, options_for_select(days, params[:location]),{}, { class: "form-control"} %>
   </div>
   <div class="form-group">
     <%= f.label :happy_to_relocate, "Happy to Relocate" %><br>
-    <%= f.text_field :happy_to_relocate, class: "form-control" %>
+   <%= f.select :happy_to_relocate, options_for_select([['Yes'],['No']],params[:happy_to_relocate]),{}, { class: "form-control"} %>
   </div>
   <div class="actions form-group">
-    <%= f.submit %>
+    <%= f.submit "Submit" , class: "btn btn-primary" %>
   </div>
 <% end %>

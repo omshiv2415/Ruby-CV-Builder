@@ -63,7 +63,7 @@
 					  class: 'btn-xs btn-danger', title: 'Logout', :method => :delete) %><li>
             <% end %>
 						<% elsif current_user.try(:admin?) %>
-            <li><%= link_to 'Job Seeker', people_path %></li>
+            <li><%= link_to 'Job Seeker', root_path %></li>
             <% end %>
           </ul>
 					<ul class="nav navbar-right col-md-4">

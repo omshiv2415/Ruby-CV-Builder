@@ -26,6 +26,7 @@ class RefereesController < ApplicationController
 	if current_user.referees.count <= 2
     @referee = Referee.new
     else
+      flash[:danger] = "You can add only two References  Details"
       redirect_to edit_referee_path(current_user.referees.first)
 		end
   end

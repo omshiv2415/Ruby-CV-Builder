@@ -1,7 +1,10 @@
-
-<%= render 'form' %>
-
+<% if current_user.people.blank? %>
+  <h5 class="my-caption center">Please fill up your details to create CV</h5>
+  <%= render 'form' %>
+  <% else %>
+  <%= render 'form' %>
 
 <div class="form-group">
   <%= link_to 'Back', people_path %>
 </div>
+<% end %>

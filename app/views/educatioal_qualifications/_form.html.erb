@@ -9,43 +9,48 @@
 	<div class="panel-body">
     <div class="form-group">
     <%= f.label :qualificationType,"Qualification Type"%><br>
-    <%= f.text_field :qualificationType , class: "form-control input-sm" %>
+    <%= f.text_field :qualificationType,:placeholder => "Beachloar/Master/Phd", class: "form-control" %>
   </div>
     <div class="form-group">
     <%= f.label :courseName, "Course Name" %><br>
-    <%= f.text_field :courseName, class: "form-control" %>
+    <%= f.text_field :courseName,:placeholder => "Computer Science", class: "form-control" %>
   </div>
    <div class="form-group">
     <%= f.label :EducationalLevels_idEducationLevel,"Education Level" %><br>
-     <%= f.select :EducationalLevels_idEducationLevel , options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8']], params[:title]),{}, { class: "form-control"} %>
+     <%= f.select :EducationalLevels_idEducationLevel, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8']],
+       params[:title]),{}, { class: "form-control"} %>
      </div>
 
     <div class="form-group">
     <%= f.label :mainSubject,"Main Subject" %><br>
-    <%= f.text_field :mainSubject, class: "form-control" %>
+    <%= f.text_field :mainSubject,:placeholder => "Software Development", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :nameOfInstitutions, "Name of Institutions" %><br>
-    <%= f.text_field :nameOfInstitutions , class: "form-control" %>
+    <%= f.text_field :nameOfInstitutions,:placeholder => "University of Ulster", class: "form-control" %>
   </div>
     <div class="form-group">
     <%= f.label :country, "Country" %><br>
-    <%= f.text_field :country , class: "form-control" %>
+    <%= f.country_select(:country, { priority_countries: ["GB", "IN", "US"], selected: "GB" },
+    { class: 'form-control', data: { attribute: "value" } }) %>
   </div>
   <div class="form-group">
     <%= f.label :yearObtained, "Year of Obtained"%><br>
-    <%= f.date_select :yearObtained , class: "form-control" %>
+    <%= f.date_select :yearObtained, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
+     [:month, :year], class: 'date-select' %>
   </div>
    <div class="form-group">
     <%= f.label :result, "Result" %><br>
-    <%= f.text_field :result, class: "form-control" %>
+    <%= f.select :result, options_for_select([['First class 1'],['Second class, upper division(2.1)'],
+        ['Second class, lower division(2.2)'],['Third class(3)'],['Pass'],
+        ['Merit'],['Distinction']], params[:result]),{}, { class: "form-control"} %>
   </div>
    <div class="form-group">
     <%= f.label :thesesTitle,"Theses Title" %><br>
-    <%= f.text_field :thesesTitle, class: "form-control" %>
+    <%= f.text_field :thesesTitle,:placeholder => "Project Name or Theese Title", class: "form-control" %>
   </div>
 
   <div class="actions form-group">
-    <%= f.submit %>
+    <%= f.submit "Submit" , class: "btn btn-primary" %>
   </div>
 <% end %>

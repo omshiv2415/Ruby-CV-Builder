@@ -11,5 +11,4 @@ class Referee < ActiveRecord::Base
   validates :relationship, presence: true, length: {minimum:1, maximum:75}
   validates :permissionToContact, presence: true, length: {minimum:1, maximum:50}
 
-
 end

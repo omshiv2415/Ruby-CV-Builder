@@ -13,6 +13,7 @@ class JobpreferencesController < ApplicationController
          flash[:danger] = "You must be an admin to perform this activity"
          redirect_to root_path
     end
+
   end
   # GET /jobpreferences/1
   # GET /jobpreferences/1.json
@@ -24,6 +25,7 @@ class JobpreferencesController < ApplicationController
     if current_user.jobpreference.count < 2
       @jobpreference = Jobpreference.new
     else
+     flash[:danger] = "You can add only two Job Preferences"
      redirect_to edit_jobpreference_path(current_user.jobpreference.first)
 		 end
   end

@@ -8,27 +8,27 @@
 	<div class="panel-body">
     <div class="form-group">
     <%= f.label :Job_Title,"Job Title" %><br>
-    <%= f.text_field :otherJobTitle, class: "form-control" %>
+    <%= f.text_field :otherJobTitle,:placeholder => "Software Engineer", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :keyDuties,"Key Duties" %><br>
-    <%= f.text_field :keyDuties, class: "form-control" %>
+    <%= f.text_field :keyDuties, :placeholder => "Software Development, Software Design, Requirement Management",class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :employerName, "Employer/Company" %><br>
-    <%= f.text_field :employerName, class: "form-control" %>
+    <%= f.text_field :employerName,:placeholder => "Accenture", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :dateStarted, "Date Started" %><br>
     <%= f.date_select :dateStarted, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
-    [:day, :month, :year], class: "form-control" %>
+    [:month, :year], class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :dateFinished, "Date Finish" %><br>
+    <%= f.label :dateFinished, "Date Finished or Current" %><br>
     <%= f.date_select :dateFinished, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
-    [:day, :month, :year], class: "form-control" %>
+    [:month, :year], class: "form-control" %>
   </div>
   <div class="actions form-group">
-    <%= f.submit %>
+    <%= f.submit  "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

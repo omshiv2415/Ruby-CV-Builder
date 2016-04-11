@@ -30,7 +30,14 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-
+    if current_user.try(:admin?)
+           @people = Person.find(params[:id])
+           @skills =  Skill.all.where(:user_id => params[:id])
+           @experiences =  Experience.all.where(:user_id => params[:id])
+           @educatioal_qualifications =  EducatioalQualification.all.where(:user_id => params[:id])
+           @jobpreferences =  Jobpreference.all.where(:user_id => params[:id])
+           @referees =  Referee.all.where(:user_id => params[:id])
+    end
     respond_to do |format|
       format.html
       format.pdf do
@@ -49,11 +56,9 @@ class PeopleController < ApplicationController
      redirect_to edit_person_path(current_user.people.first)
 		end
   end
-
   # GET /people/1/edit
   def edit
   end
-
   # POST /people
   # POST /people.json
   def create

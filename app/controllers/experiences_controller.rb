@@ -25,6 +25,7 @@ class ExperiencesController < ApplicationController
 		 if current_user.experiences.count < 5
       @experience = Experience.new
     else
+     flash[:danger] = "You can add only five Experiences  Details"
      redirect_to edit_experience_path(current_user.experiences.first)
 		 end
   end

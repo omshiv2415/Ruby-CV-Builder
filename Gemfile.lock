@@ -54,6 +54,11 @@ GEM
     bootstrap_progressbar (0.2.0)
     builder (3.2.2)
     byebug (8.2.2)
+    carmen (1.0.2)
+      activesupport (>= 3.0.0)
+    carmen-rails (1.0.1)
+      carmen (~> 1.0.0)
+      rails
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -73,6 +78,13 @@ GEM
     coffee-script-source (1.10.0)
     commonjs (0.2.7)
     concurrent-ruby (1.0.1)
+    countries (1.2.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    country_select (2.5.2)
+      countries (~> 1.2.0)
+      sort_alphabetical (~> 1.0)
+    currencies (0.4.2)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -87,6 +99,7 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -179,6 +192,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sort_alphabetical (1.0.2)
+      unicode_utils (>= 1.2.2)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -203,6 +218,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode_utils (1.4.0)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -221,8 +237,11 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   bootstrap_progressbar
   byebug
+  carmen-rails
   carrierwave
   coffee-rails (~> 4.1.0)
+  countries
+  country_select
   devise
   devise-bootstrap-views
   jbuilder (~> 2.0)

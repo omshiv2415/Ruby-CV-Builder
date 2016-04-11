@@ -23,6 +23,7 @@ class EducatioalQualificationsController < ApplicationController
    if current_user.educatioal_qualifications.count < 5
     @educatioal_qualification = EducatioalQualification.new
     else
+     flash[:danger] = "You can add only five Education Details"
      redirect_to edit_educatioal_qualification_path(current_user.educatioal_qualifications.first)
     end
   end

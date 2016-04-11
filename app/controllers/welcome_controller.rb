@@ -5,7 +5,6 @@ class WelcomeController < ApplicationController
     if current_user.try(:admin?)
 		   @people =  Person.all
 		   elsif current_user
-
         if current_user.people.blank?
           redirect_to new_person_path
           else
@@ -19,12 +18,14 @@ class WelcomeController < ApplicationController
 	 	end
   end
 def show
+   current_user
    @people = current_user.people.find(current_user)
    @skills = current_user.skills
    @experiences = current_user.experiences
    @educatioal_qualifications = current_user.educatioal_qualifications.all
    @jobpreferences = current_user.jobpreference
    @referees = current_user.referees
+
     respond_to do |format|
       format.html
       format.pdf do
@@ -37,6 +38,7 @@ def show
         :show_as_html => params[:debug].present?
       end
     end
+
 end
   def action1
    redirect_to new_skill_path(@skills)
