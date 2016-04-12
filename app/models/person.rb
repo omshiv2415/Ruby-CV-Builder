@@ -55,13 +55,6 @@ class Person < ActiveRecord::Base
 			self.id = self.user_id
 		end
 	end
-
-  def self.search(search)
-  if search
-   where("forename1 LIKE ? OR forename2 LIKE ?", "%#{search}%", "%#{search}%")
-  else
-   self.find(:all)
+  def search
   end
-end
-
 end
