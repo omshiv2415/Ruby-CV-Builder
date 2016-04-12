@@ -55,6 +55,12 @@ class Person < ActiveRecord::Base
 			self.id = self.user_id
 		end
 	end
-  def search
+ def self.search(search_skill)
+    if search_skill
+      self.joins(:skill).where('skills.skillName LIKE ?', "%#{search_skill}%")
+     # joins(:owner).where('dogs.name LIKE ? or owners.name LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      find(:all)
+    end
   end
 end

@@ -17,11 +17,14 @@ class PeopleController < ApplicationController
              @people = Person.all.select("*").joins(:experience)
               .where('experiences.otherJobTitle LIKE ?', "%#{params[:search_exp]}%")
             elsif params.has_key?(:search_skill)
-            @people =  Person.select("*").joins(:skill).where('skills.skillName LIKE ?', "%#{params[:search_skill]}%")
+            #@people = Person.select("*").joins(:skill).where('skills.skillName LIKE ?', "%#{params[:search_skill]}%")
+            @people = Person.select("*").search(params[:search_skill])
+
 
             else
                @people = Person.order("created_at DESC")
             end
+
 
       else
          flash[:danger] = "You must be an admin to perform this activity"
