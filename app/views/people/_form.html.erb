@@ -153,13 +153,11 @@
                    ['180'],['190'],['200'],['210'],['220'],['230'],['240'],['250'],['260'],
                    ['270'],['280']], params[:ucasPoints]),{},{ class: "form-control"} %>
         <br/>
-        <%= f.label :Student_Status, "Student Status" %><br>
-         <%= f.text_field :studentStatus , class: "form-control" %>
+         <%= f.label :Student_Status, "Student Status" %><br>
          <%= f.select :studentStatus, options_for_select([['Completed'],['Current'],['Part-Time'],['Full-Time']],
        params[:studentStatus]),{},{ class: "form-control"} %>
         <br/>
         <%= f.label :Penalty_Points, "Penalty Points" %><br>
-        <%= f.number_field  , class: "form-control" %>
         <%= f.select :penaltyPoints, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],
                    ['7'],['8'],['9'],['10']], params[:penaltyPoints]),{},{ class: "form-control"} %>
 

@@ -39,8 +39,11 @@
 			================================================== -->
 			<div class="row-fluid heading">
 				<div class="span8">
-					<%= image_tag(@people.photo,:class => "my-picture")%>
-					<h1 class="my-name"> <%= @people.forename1 %></h1>
+					<% if !@people.photo.blank? %>
+           <%= image_tag(@people.photo,:class => "my-picture")%>
+
+           <% end %>
+				 <h1 class="my-name"> <%= @people.forename1 %>   <%= @people.surname %> </h1>
           <br/>
 					<h2 class="my-profession">About me</h2>
 					<p align="justify" class="my-message">

@@ -42,9 +42,9 @@
 			<div class="row-fluid heading">
 				<div class="span8">
            <% if !@people.photo.blank? %>
-           	<%= image_tag(@people.photo,:class => "my-picture")%>
+           <%= image_tag(@people.photo,:class => "my-picture")%>
            <% end %>
-					 <h1 class="my-name"> <%= @people.forename1 %></h1>
+					 <h1 class="my-name"> <%= @people.forename1 %>   <%= @people.surname %> </h1>
           <h5 class="my-venture"> <span> <%= link_to ('<i align="center" class="fa fa-pencil"  ></i> ').html_safe,
            edit_person_path(@people), title: 'Edit about me' %> </span></h5><br/>
 					<h2 class="my-profession">About me</h2>
