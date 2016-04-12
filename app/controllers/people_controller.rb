@@ -8,20 +8,11 @@ class PeopleController < ApplicationController
 
   def index
     if current_user.try(:admin?)
-            if params.has_key?(:search_jobpreferences)
-             @people = Person.all.select("*").joins(:jobpreferences)
-              .where('LOWER(jobpreferences.job_tile) LIKE ?', "%#{params[:search_jobseeker.downcase]}%")
-             # where("LOWER(title) LIKE ? OR LOWER(description) LIKE ?", "%#{search.downcase}%", "%#{search.downcase}%")
-            elsif params.has_key?(:search_exp)
-             @people = Person.all.select("*").joins(:experience)
-              .where('experiences.otherJobTitle LIKE ?', "%#{params[:search_exp]}%")
-            elsif params.has_key?(:search_skill)
-             @people = Person.all.select("*").joins(:skill)
-              .where('LOWER(skills.skillName) LIKE ?', "%#{params[:search_skill.downcase]}%")
-            else
-               @people = Person.order("created_at DESC")
-            end
-
+          if params[:search]
+           @people = Person.search(params[:search])
+          else
+           @people = Person.all
+        end
       else
          flash[:danger] = "You must be an admin to perform this activity"
          redirect_to root_path
