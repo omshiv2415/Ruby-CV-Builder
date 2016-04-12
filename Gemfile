@@ -8,14 +8,7 @@ gem 'bootstrap_progressbar'
 gem 'country_select'
 gem 'countries'
 gem 'carmen-rails'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-#gem 'pg_search'
-#gem 'acts-as-taggable-on'
-#gem 'therubyracer'
-#gem 'sunspot_rails'
-#gem 'sunspot_solr'
 gem 'rails', '4.2.5.1'
-# Use sqlite3 as the database for Active Record
 gem 'wicked_pdf'
 gem "rmagick"
 gem "mini_magick"
