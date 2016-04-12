@@ -38,7 +38,6 @@
       <th>Show </th>
     </tr>
   </thead>
-
   <tbody>
     <% @people.each do |person| %>
       <tr>
@@ -50,7 +49,7 @@
         <% else %>
         <td colspan="1">Not Available</td>
         <% end %>
-        <td colspan="1"><%= link_to 'Show', person %></td>
+        <td colspan="1"><%= link_to 'Show', person_path(:id => person.id)%></td>
       </tr>
     <% end %>
   </tbody>
