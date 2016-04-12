@@ -99,7 +99,7 @@
 </div>
    <div class="row">
     <div class="col-xs-6">
-    <%= f.label :Photo_Upload %><br>
+    <%= f.label :Photo_Upload, "Photo Upload (Optional)" %><br>
     <%= f.file_field :photo , class: "form-control" %>
   </div>
     <div class="col-xs-6">
@@ -118,35 +118,50 @@
     <div class="row">
        <div class="col-xs-4">
        <%= f.label :Educational_Levels,"Education Levels" %><br>
-       <%= f.number_field :EducationalLevels_idEducatonLevel, class: "form-control" %>
+       <%= f.select :EducationalLevels_idEducatonLevel, options_for_select([['1'],['2'],['3']],
+       params[:EducationalLevels_idEducatonLevel]),{},{ class: "form-control"} %>
        <br/>
         <%= f.label :Five_Or_More_Gcses, "Five or more GCSEs" %><br>
-        <%= f.number_field :fiveOrMoreGcses , class: "form-control" %>
+       <%= f.select :fiveOrMoreGcses, options_for_select([['5'],['6'],['7'],['8'],['9'],['10'],['11']],
+        params[:fiveOrMoreGcses]),{},{ class: "form-control"} %>
         <br/>
         <%= f.label :No_Of_A_levels, "No of 'A' Levels" %><br>
-        <%= f.number_field :noOfAlevels, class: "form-control" %>
+
+          <%= f.select :noOfAlevels, options_for_select([['1'],['2']], params[:noOfAlevels]),{},{ class: "form-control"} %>
         <br/>
        </div>
       <div class="col-xs-4">
         <%= f.label :No_Of_Gcses,"No of GCSEs" %><br>
-        <%= f.number_field :noOfGcses, class: "form-control" %>
+        <%= f.select :noOfGcses, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10'],['11']],
+        params[:noOfGcses]),{},{ class: "form-control"} %>
          <br/>
-        <%= f.label :Gcse_English_Grade,"GCSE Englsih Grade" %><br>
-        <%= f.text_field :gecseEnglishGrade , class: "form-control" %>
+         <%= f.select :gecseEnglishGrade, options_for_select([['A*'],['A'],['B'],['C'],['D'],['E'],
+                   ['F'],['G'],['U'],['AA*'],['AA'],['BB'],['CC'],['DD'],['EE'],
+                   ['FF']], params[:gecseEnglishGrade]),{},{ class: "form-control"} %>
          <br/>
         <%= f.label :Gcse_Maths_Grade,"GCSE Maths Grade" %><br>
-        <%= f.text_field :gcseMathsGrade , class: "form-control" %>
+
+        <%= f.select :gcseMathsGrade, options_for_select([['A*'],['A'],['B'],['C'],['D'],['E'],
+                   ['F'],['G'],['U'],['AA*'],['AA'],['BB'],['CC'],['DD'],['EE'],
+                   ['FF']], params[:gcseMathsGrade]),{},{ class: "form-control"} %>
         <br/>
       </div>
        <div class="col-xs-4">
         <%= f.label :Ucas_Points, "UCAS Points" %><br>
-        <%= f.number_field :ucasPoints , class: "form-control" %>
+       <%= f.select :ucasPoints, options_for_select([['20'],['30'],['40'],['50'],['60'],['70'],
+                   ['80'],['90'],['100'],['110'],['120'],['140'],['150'],['160'],['170'],
+                   ['180'],['190'],['200'],['210'],['220'],['230'],['240'],['250'],['260'],
+                   ['270'],['280']], params[:ucasPoints]),{},{ class: "form-control"} %>
         <br/>
         <%= f.label :Student_Status, "Student Status" %><br>
-        <%= f.text_field :studentStatus , class: "form-control" %>
+         <%= f.text_field :studentStatus , class: "form-control" %>
+         <%= f.select :studentStatus, options_for_select([['Completed'],['Current'],['Part-Time'],['Full-Time']],
+       params[:studentStatus]),{},{ class: "form-control"} %>
         <br/>
         <%= f.label :Penalty_Points, "Penalty Points" %><br>
-        <%= f.number_field :penaltyPoints , class: "form-control" %>
+        <%= f.number_field  , class: "form-control" %>
+        <%= f.select :penaltyPoints, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],
+                   ['7'],['8'],['9'],['10']], params[:penaltyPoints]),{},{ class: "form-control"} %>
 
       </div>
       </div>

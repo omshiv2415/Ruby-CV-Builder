@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407210919) do
+ActiveRecord::Schema.define(version: 20160412133220) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20160407210919) do
     t.binary   "photo"
     t.string   "female"
     t.string   "postcodeStart",                     limit: 10
-    t.string   "authorityToWorkStatement",          limit: 255
+    t.string   "authorityToWorkStatement"
     t.string   "contactPreference"
     t.integer  "EducationalLevels_idEducatonLevel"
     t.integer  "noOfGcses"
@@ -100,8 +100,8 @@ ActiveRecord::Schema.define(version: 20160407210919) do
     t.date     "dob"
     t.integer  "penaltyPoints",                     limit: 4
     t.integer  "user_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"

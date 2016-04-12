@@ -14,7 +14,7 @@ class CreatePeople < ActiveRecord::Migration
       t.binary :photo
       t.string :female
       t.string :postcodeStart, limit: 10
-      t.string :authorityToWorkStatement, limit: 255
+      t.string :authorityToWorkStatement
       t.string :contactPreference
       t.integer :EducationalLevels_idEducatonLevel
       t.integer :noOfGcses
