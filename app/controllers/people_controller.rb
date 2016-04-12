@@ -10,13 +10,13 @@ class PeopleController < ApplicationController
     if current_user.try(:admin?)
             if params.has_key?(:search_jobpreferences)
              @people = Person.all.select("*").joins(:jobpreferences)
-              .where('jobpreferences.job_tile LIKE ?', "%#{params[:search_jobseeker]}%")
+              .where('jobpreferences.job_tile ILIKE ?', "%#{params[:search_jobseeker]}%")
             elsif params.has_key?(:search_exp)
              @people = Person.all.select("*").joins(:experience)
-              .where('experiences.otherJobTitle LIKE ?', "%#{params[:search_exp]}%")
+              .where('experiences.otherJobTitle ILIKE ?', "%#{params[:search_exp]}%")
             elsif params.has_key?(:search_skill)
              @people = Person.all.select("*").joins(:skill)
-              .where('skills.skillName LIKE ?', "%#{params[:search_skill]}%")
+              .where('skills.skillName ILIKE ?', "%#{params[:search_skill]}%")
             else
                @people = Person.order("created_at DESC")
             end
