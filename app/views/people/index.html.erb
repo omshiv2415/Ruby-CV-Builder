@@ -1,8 +1,8 @@
 
        <%  if params.has_key?(:search_jobpreferences) %>
-       <%= render 'people/jobpreference', obj: @people %>
+       <%= render 'jobpreference', obj: @people %>
        <% elsif params.has_key?(:search_exp) %>
-       <%= render 'people/experience', obj: @people %>
+       <%= render 'experience', obj: @people %>
        <% elsif params.has_key?(:search_skill) %>
-       <%= render 'people/skill', obj: @people %>
+       <%= render 'skill', obj: @people %>
        <% end %>
