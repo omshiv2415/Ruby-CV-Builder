@@ -113,16 +113,6 @@ ActiveRecord::Schema.define(version: 20160412133220) do
     t.datetime "mycv_updated_at"
   end
 
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "searchable_id"
-    t.string   "searchable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
-
   create_table "referees", force: :cascade do |t|
     t.integer  "idReferees"
     t.integer  "Persons_idUser"
@@ -132,7 +122,7 @@ ActiveRecord::Schema.define(version: 20160412133220) do
     t.string   "email",               limit: 50
     t.string   "contactPhone",        limit: 16
     t.string   "relationship",        limit: 50
-    t.string   "permissionToContact", limit: 1
+    t.integer  "permissionToContact", limit: 1
     t.integer  "verified",            limit: 1
     t.string   "howVerified",         limit: 45
     t.string   "referenceDoc"
@@ -152,32 +142,10 @@ ActiveRecord::Schema.define(version: 20160412133220) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "skillType"
-    t.integer  "people_id"
     t.integer  "person_id"
   end
 
-  add_index "skills", ["people_id"], name: "index_skills_on_people_id"
   add_index "skills", ["person_id"], name: "index_skills_on_person_id"
-
-  create_table "taggings", force: :cascade do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context",       limit: 128
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", force: :cascade do |t|
-    t.string  "name"
-    t.integer "taggings_count", default: 0
-  end
-
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
