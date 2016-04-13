@@ -1,15 +1,15 @@
 class Person < ActiveRecord::Base
   belongs_to :user
-  has_many :educatioal_qualification
-  has_many :skill
-  has_many :experience
-  has_many :referee
+  has_many :educatioal_qualifications
+  has_many :skills
+  has_many :experiences
+  has_many :referees
   has_many :jobpreferences
   #acts_as_taggable
   #acts_as_taggable_on :skills
   #include PgSearch
   #multisearchable :against => [:skillName, :skillType]
-  accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience, :referee, :jobpreferences
+  accepts_nested_attributes_for :user, :educatioal_qualifications, :skills, :experiences, :referees, :jobpreferences
   #pg_search_scope :quick_search, against: [:skillName, :skillType]
   validates :title, presence: true, length: {minimum:1, maximum:15}
 
@@ -57,7 +57,7 @@ class Person < ActiveRecord::Base
 	end
  def self.search(search_skill)
     if search_skill
-      self.joins(:skills).where('LOWER(skills.skillName) LIKE ?', "%#{search_skill}%")
+      self.joins(:skill).where('LOWER(skills.skillName) LIKE ?', "%#{search_skill}%")
      # joins(:owner).where('dogs.name LIKE ? or owners.name LIKE ?', "%#{search}%", "%#{search}%")
     else
       find(:all)
