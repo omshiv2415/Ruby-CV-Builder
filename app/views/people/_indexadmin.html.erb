@@ -171,12 +171,11 @@
 
 				<div class="span4">
 					<h5 class="my-caption">Personal Information</h5>
-					<h4 class="my-info">Birthday <span><%= @people.dob.strftime("%d %b %Y") %></span></h4>
-					<h4 class="my-info">Address <span><%= @people.addressLine1 %></span></h4>
-					<h4 class="my-info">&nbsp;<span><%= @people.addressLine2 %></span></h4>
-					<h4 class="my-info">&nbsp;<span><%= @people.town %></span></h4>
-          <h4 class="my-info">&nbsp;<span><%= @people.postcode %></span></h4>
-
+					  <h4 class="my-info">Birthday <span><%= @people.dob.strftime("%d %b %Y") %></span></h4>
+					   <h4 class="my-info">Address <span><%= @people.addressLine1 %></span></h4>
+					   <h4 class="my-info"><span> <%= @people.addressLine2 %></span></h4>
+					  <h4 class="my-info">Town <span> <%= @people.town %></span></h4>
+          <h4 class="my-info">Postcode <span> <%= @people.postcode %></span></h4>
 				</div>
 				<!--column 2 -->
 				<div class="span4">
@@ -202,10 +201,7 @@
 							<%= link_to @people.personalUrl  %>
 						</span>
 					</h4>
-
 				</div>
-
-
 				<!--column 3 -->
 			 	<!-- column 1 -->
         <% if !@referees.blank? %>

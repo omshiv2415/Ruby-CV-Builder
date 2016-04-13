@@ -9,7 +9,7 @@
 	<div class="panel-body">
     <div class="form-group">
     <%= f.label :qualificationType,"Qualification Type"%><br>
-    <%= f.text_field :qualificationType,:placeholder => "Beachloar/Master/Phd", class: "form-control" %>
+    <%= f.text_field :qualificationType,:placeholder => "Bachelor/Master/PhD", class: "form-control" %>
   </div>
     <div class="form-group">
     <%= f.label :courseName, "Course Name" %><br>
@@ -46,7 +46,7 @@
         ['Merit'],['Distinction']], params[:result]),{}, { class: "form-control"} %>
   </div>
    <div class="form-group">
-    <%= f.label :thesesTitle,"Theses Title" %><br>
+    <%= f.label :thesesTitle,"Thesis Title" %><br>
     <%= f.text_field :thesesTitle,:placeholder => "Project Name or Theese Title", class: "form-control" %>
   </div>
 

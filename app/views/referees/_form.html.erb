@@ -12,32 +12,28 @@
       <%= f.select :title, options_for_select([['Mr'],['Miss'],['Mrs'],['Ms']], params[:title]),{}, { class: "form-control"} %>
   </div>
   <div class="form-group">
-    <%= f.label :forename %><br>
+    <%= f.label :Forename %><br>
     <%= f.text_field :forename , class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :surname %><br>
+    <%= f.label :Surname %><br>
     <%= f.text_field :surname, class: "form-control" %>
   </div>
    <div class="form-group">
-    <%= f.label :email %><br>
+    <%= f.label :Email %><br>
     <%= f.text_field :email, class: "form-control" %>
   </div>
    <div class="form-group">
-    <%= f.label :contactPhone %><br>
+    <%= f.label :ContactPhone, "Contatct Phone" %><br>
     <%= f.text_field :contactPhone, class: "form-control" %>
   </div>
    <div class="form-group">
-    <%= f.label :relationship %><br>
+    <%= f.label :Relationship %><br>
     <%= f.text_field :relationship, class: "form-control" %>
   </div>
    <div class="form-group">
-     <%= f.label :permissionToContact %><br>
+     <%= f.label :permissionToContact, "Permission to Contact" %><br>
      <%= f.select :permissionToContact, options_for_select([['NO'],['Phone'],['Email']], params[:title]),{}, { class: "form-control"} %>
-  </div>
-   <div class="form-group">
-    <%= f.label :referenceDoc %><br>
-    <%= f.text_field :referenceDoc, class: "form-control" %>
   </div>
   <div class="actions form-group">
     <%= f.submit "Submit" , class: "btn btn-primary" %>
