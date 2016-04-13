@@ -54,8 +54,7 @@ class Person < ActiveRecord::Base
 	end
  def self.search(search_skill)
     if search_skill
-      self.includes(:educatioal_qualification).where('LOWER(educatioal_qualifications.courseName) LIKE ?', "%#{search_skill}%")
-
+      self.joins(:educatioal_qualification).where('LOWER(educatioal_qualifications.courseName) LIKE ?', "%#{search_skill}%")
      # joins(:owner).where('dogs.name LIKE ? or owners.name LIKE ?', "%#{search}%", "%#{search}%")
     else
       find(:all)

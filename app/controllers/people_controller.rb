@@ -9,8 +9,9 @@ class PeopleController < ApplicationController
   def index
     if current_user.try(:admin?)
             if params.has_key?(:search_jobpreferences)
- @people = Person.includes(:jobpreferences).where("jobpreferences.job_tile LIKE ?", :search_jobseeker => "%#{params[:search_jobseeker]}%")
-       # listings = Listing.includes(:neighborhood).where("listings.headline ilike :keywords or neighborhoods.name ilike :keywords", :keywords => "%#{keywords}%")
+              Person.select("*").search(params[:search_jobpreferences])
+ #@people = Person.includes(:jobpreferences).where('jobpreferences.job_tile LIKE ?', "%#{params[:search_jobseeker]}%")
+        listings = Listing.includes(:neighborhood).where("listings.headline ilike :keywords or neighborhoods.name ilike :keywords", :keywords => "%#{keywords}%")
 
             elsif params.has_key?(:search_exp)
              @people = Person.all.select("*").joins(:experience)
