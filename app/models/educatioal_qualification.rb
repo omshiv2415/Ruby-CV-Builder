@@ -11,5 +11,9 @@ class EducatioalQualification < ActiveRecord::Base
   validates :yearObtained, presence: true, length: {minimum:1, maximum:15}
   validates :result, presence: true, length: {minimum:1, maximum:25}
   validates :thesesTitle, presence: true, length: {minimum:1, maximum:50}
-
+  before_save :user_setup
+  private
+	def user_setup
+			self.person_id = self.user_id
+	end
 end

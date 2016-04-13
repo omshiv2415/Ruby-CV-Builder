@@ -57,7 +57,7 @@ class Person < ActiveRecord::Base
 	end
  def self.search(search_skill)
     if search_skill
-      self.joins(:jobpreferences).where('LOWER(jobpreferences.job_title) LIKE ?', "%#{search_skill}%")
+      self.joins(:skill).where('LOWER(skills.skillType) LIKE ?', "%#{search_skill}%")
      # joins(:owner).where('dogs.name LIKE ? or owners.name LIKE ?', "%#{search}%", "%#{search}%")
     else
       find(:all)
