@@ -100,7 +100,7 @@
             </tr>
         </tbody>
       </table>
-
+        <% if !@educatioal_qualifications.blank? %>
        <div class="span4">
          <h5 class="my-caption my-venture">Education<span><%= link_to "Add",new_educatioal_qualification_path,
          {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
@@ -117,7 +117,9 @@
        <h5 class="my-venture">  <span><%= link_to ('<i align="center" class="fa fa-trash"  ></i> ').html_safe,
            qualification, method: :delete, data: { confirm: 'Are you sure?' }, title: 'Delete Qualification' %></span></h5>
        <hr/>
-    <% end %>
+       <% end %>
+     <% end %>
+        <% if !@skills.blank? %>
         <div class="span4">
          <h5 class="my-caption my-venture">Skills<span><%= link_to "Add",new_skill_path,
         {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
@@ -148,7 +150,9 @@
           <% end %>
         </tbody>
       </table>
+  <% end %>
 				<!-- column 1 -->
+         <% if !@experiences.blank? %>
 				<div class="span4">
           <h5 class="my-caption my-venture">Employment<span><%= link_to "Add",new_experience_path,
           {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
@@ -167,8 +171,10 @@
 
           <% end %>
 				</div>
+           <% end %>
 			<!-- end of resume -->
-          	<!-- column 1 -->
+       <!-- column 1 -->
+        <% if !@jobpreferences.blank? %>
 				<div class="span4">
           <h5 class="my-caption my-venture">Job Preferences<span><%= link_to "Add",new_jobpreference_path,
           {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
@@ -184,6 +190,7 @@
           <hr/>
           <% end %>
 				</div>
+           <% end %>
 			<!-- end of resume -->
 			<!-- Contact
 			================================================== -->
@@ -228,6 +235,7 @@
 				</div>
 				<!--column 3 -->
 			 	<!-- column 1 -->
+        <% if !@referees.blank? %>
 				<div class="span4">
           <h5 class="my-caption my-venture">References<span><%= link_to "Add",new_referee_path,
           {class: 'btn btn-sm btn-primary btn-create glyphicon glyphicon-plus'} %></span></h5>
@@ -246,6 +254,7 @@
           <% end %>
 			  	</div>
         	</div>
+          <% end %>
         </div><!-- end of contact -->
       </div><!-- end of container -->
      </div>
