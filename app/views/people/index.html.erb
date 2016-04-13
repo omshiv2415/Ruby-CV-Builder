@@ -1,57 +1,7 @@
-<div class="page-header">
-<div class="contextual">
-
-</div>
-  <div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <%= form_tag(people_path, :method => "get") do %>
-      <%= text_field_tag :search_skill, params[:search_skill], class: "form-control", placeholder: "Search by Skill" %>
-      <span class="input-group-btn">
-        <br/>
-        <%= submit_tag "Search", class: 'btn btn-default' %>
-      </span>
-      <% end %>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-    <div class="col-lg-6">
-    <div class="input-group">
-      <%= form_tag(people_path, :method => "get") do %>
-      <%= text_field_tag :search_exp, params[:search_exp], class: "form-control", placeholder: "Search by Job title" %>
-      <span class="input-group-btn">
-        <br/>
-        <%= submit_tag "Search", class: 'btn btn-default' %>
-      </span>
-      <% end %>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
-<hr/>
-<table class="table table-striped table-bordered table-condensed">
-<thead>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Skill Name</th>
-      <th>CV Download</th>
-      <th>Show </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @people.each do |person| %>
-      <tr>
-        <td colspan="1"><%= person.forename1 %></td>
-        <td colspan="1"><%= person.surname %></td>
-        <td colspan="1"><%= person.surname %></td>
-
-        <td colspan="1">Not Available</td>
-
-        <td colspan="1"><%= link_to 'Show', person_path(:id => person.id)%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'Back', root_path %>
+       <%  if params.has_key?(:search_jobpreferences) %>
+       <%= render 'people/jobpreference', obj: @people %>
+       <% elsif params.has_key?(:search_exp) %>
+       <%= render 'people/experience', obj: @people %>
+       <% elsif params.has_key?(:search_skill) %>
+       <%= render 'people/skill', obj: @people %>
+       <% end %>
