@@ -43,7 +43,7 @@
       <tr>
         <td colspan="1"><%= person.forename1 %></td>
         <td colspan="1"><%= person.surname %></td>
-        <td colspan="1"><%= person.skillName %></td>
+        <td colspan="1"><%= person.skillname %></td>
         <% if !person.mycv.blank? %>
         <td colspan="1"><%= link_to "Download", person.mycv.url(:original, false) %></td>
         <% else %>
