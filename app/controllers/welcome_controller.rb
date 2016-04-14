@@ -18,14 +18,24 @@ class WelcomeController < ApplicationController
 	 	end
   end
 def show
-   current_user
-   @people = current_user.people.find(current_user)
-   @skills = current_user.skills
-   @experiences = current_user.experiences
-   @educatioal_qualifications = current_user.educatioal_qualifications.all
-   @jobpreferences = current_user.jobpreference
-   @referees = current_user.referees
 
+    if current_user.try(:admin?)
+           @people = Person.find(params[:id])
+           @skills =  Skill.all.where(:user_id => params[:id])
+           @experiences =  Experience.all.where(:user_id => params[:id])
+           @educatioal_qualifications =  EducatioalQualification.all.where(:user_id => params[:id])
+           @jobpreferences =  Jobpreference.all.where(:user_id => params[:id])
+           @referees =  Referee.all.where(:user_id => params[:id])
+
+    else current_user
+
+     @people = current_user.people.find(current_user)
+     @skills = current_user.skills
+     @experiences = current_user.experiences
+     @educatioal_qualifications = current_user.educatioal_qualifications.all
+     @jobpreferences = current_user.jobpreference
+     @referees = current_user.referees
+    end
     respond_to do |format|
       format.html
       format.pdf do

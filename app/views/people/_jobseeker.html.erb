@@ -34,7 +34,8 @@
       <th>Name</th>
       <th>Surname</th>
       <th>Town</th>
-      <th>CV Download</th>
+      <th>Client Uploaded CV</th>
+      <th>System Generated CV</th>
       <th>Show </th>
     </tr>
   </thead>
@@ -49,6 +50,7 @@
         <% else %>
         <td colspan="1">Not Available</td>
         <% end %>
+        <td colspan="1"><%= link_to 'Download', welcome_show_path(:id => person.id, format: 'pdf') %></td>
         <td colspan="1"><%= link_to 'Show', person_path(:id => person.id)%></td>
       </tr>
     <% end %>
