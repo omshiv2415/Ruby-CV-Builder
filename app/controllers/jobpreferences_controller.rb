@@ -1,20 +1,20 @@
 class JobpreferencesController < ApplicationController
   before_action :set_jobpreference, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index]
-	before_action :require_user, except: [:index, :show,]
-	before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /jobpreferences
   # GET /jobpreferences.json
 
- def index
+  def index
     if current_user.try(:admin?)
-       @jobpreferences = Jobpreference.all
-      else
-         flash[:danger] = "You must be an admin to perform this activity"
-         redirect_to root_path
+      @jobpreferences = Jobpreference.all
+    else
+      flash[:danger] = 'You must be an admin to perform this activity'
+      redirect_to root_path
     end
+   end
 
-  end
   # GET /jobpreferences/1
   # GET /jobpreferences/1.json
   def show
@@ -25,9 +25,9 @@ class JobpreferencesController < ApplicationController
     if current_user.jobpreference.count < 2
       @jobpreference = Jobpreference.new
     else
-     flash[:danger] = "You can add only two Job Preferences"
-     redirect_to edit_jobpreference_path(current_user.jobpreference.first)
-		 end
+      flash[:danger] = 'You can add only two Job Preferences'
+      redirect_to edit_jobpreference_path(current_user.jobpreference.first)
+     end
   end
 
   # GET /jobpreferences/1/edit
@@ -75,19 +75,21 @@ class JobpreferencesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_jobpreference
-      @jobpreference = Jobpreference.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def jobpreference_params
-      params.require(:jobpreference).permit(:jobtitle, :job_title, :job_role, :role_type, :location, :happy_to_relocate, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_jobpreference
+    @jobpreference = Jobpreference.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def jobpreference_params
+    params.require(:jobpreference).permit(:jobtitle, :job_title, :job_role, :role_type, :location, :happy_to_relocate, :user_id)
+  end
+
   def  require_same_user
     if current_user != @jobpreference.user
-				flash[:danger] ="You can only edit or delete your details"
-				redirect_to root_path
-			end
-	end
+      flash[:danger] = 'You can only edit or delete your details'
+      redirect_to root_path
+      end
+  end
 end

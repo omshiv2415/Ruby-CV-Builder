@@ -50,7 +50,8 @@
         <% else %>
         <td colspan="1">Not Available</td>
         <% end %>
-        <td colspan="1"><%= link_to 'Show', person_path(:id => person.id)%></td>
+        <td colspan="1"><%= link_to 'Download', welcome_show_path(:id => person.user_id, format: 'pdf') %></td>
+        <td colspan="1"><%= link_to 'Show', person_path(:id => person.user_id)%></td>
       </tr>
     <% end %>
   </tbody>

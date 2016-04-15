@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,6 +7,7 @@
 		<meta name="keywords" content="">
 		<meta name="author" content="Your Name">
     <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "derek_pdf"%>
 		<title>Your Name - Your Profession</title>
 		<!-- Styles
 		================================================== -->
@@ -32,7 +30,6 @@
 		<![endif]-->
 	</head>
 	<body>
-
     <br/> <br/>
 		<div class="container-fluid wrapper">
 			<!-- Heading
@@ -40,7 +37,7 @@
 			<div class="row-fluid heading">
 				<div class="span8">
 					<% if !@people.photo.blank? %>
-           <%= image_tag(@people.photo,:class => "my-picture")%>
+           <%= wicked_pdf_image_tag(@people.photo,:class => "my-picture1")%>
            <% end %>
 				 <h1 class="my-name"> <%= @people.forename1 %>   <%= @people.surname %> </h1>
           <br/>

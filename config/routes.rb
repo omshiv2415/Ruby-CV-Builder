@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :people
   devise_for :users
   get 'welcome/index'
-	get 'welcome/show', to: 'welcome#show'
+  get 'welcome/show', to: 'welcome#show'
   gem 'devise'
   gem 'twitter-bootstrap-rails'
   gem 'devise-bootstrap-views'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

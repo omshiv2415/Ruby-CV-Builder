@@ -9,8 +9,8 @@ class CreatePeople < ActiveRecord::Migration
       t.string :addressLine2, limit: 45
       t.string :town, limit: 45
       t.string :postcode, limit: 10
-      t.string :secondEmail, limit:50
-      t.string :personalUrl, limit:64
+      t.string :secondEmail, limit: 50
+      t.string :personalUrl, limit: 64
       t.binary :photo
       t.string :female
       t.string :postcodeStart, limit: 10

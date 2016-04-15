@@ -6,15 +6,15 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'bootstrap_progressbar'
 gem 'country_select'
-gem 'countries'
-gem 'carmen-rails'
+
 gem 'rails', '4.2.5.1'
 gem 'wicked_pdf'
-gem "rmagick"
-gem "mini_magick"
-gem "paperclip", "~> 4.3"
+gem 'rmagick'
+gem 'mini_magick'
+gem 'paperclip', '~> 4.3'
 gem 'wkhtmltopdf-binary'
 gem 'rails-jcarousel'
+gem 'rubocop'
 gem 'bootstrap-sass', '~> 3.3.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -52,9 +52,9 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem "rails-erd"
-  #rake diagram:all
-	gem 'railroady'
+  gem 'rails-erd'
+  # rake diagram:all
+  gem 'railroady'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

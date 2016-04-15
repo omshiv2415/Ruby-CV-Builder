@@ -5,7 +5,7 @@ class CreateEducatioalQualifications < ActiveRecord::Migration
       t.integer :Persons_idUser
       t.string :qualificationType, limit: 16
       t.string :courseName, limit: 100
-      t.integer :EducationalLevels_idEducationLevel, limit:3
+      t.integer :EducationalLevels_idEducationLevel, limit: 3
       t.string :vocational, limit: 1
       t.string :mainSubject, limit: 45
       t.string :nameOfInstitutions, limit: 100

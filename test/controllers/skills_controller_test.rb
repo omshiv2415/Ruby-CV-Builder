@@ -5,18 +5,18 @@ class SkillsControllerTest < ActionController::TestCase
     @skill = skills(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:skills)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create skill" do
+  test 'should create skill' do
     assert_difference('Skill.count') do
       post :create, skill: { Person_idUser: @skill.Person_idUser, howVerified: @skill.howVerified, idSkills: @skill.idSkills, skillLevel: @skill.skillLevel, skillName: @skill.skillName, verified: @skill.verified }
     end
@@ -24,22 +24,22 @@ class SkillsControllerTest < ActionController::TestCase
     assert_redirected_to skill_path(assigns(:skill))
   end
 
-  test "should show skill" do
+  test 'should show skill' do
     get :show, id: @skill
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @skill
     assert_response :success
   end
 
-  test "should update skill" do
+  test 'should update skill' do
     patch :update, id: @skill, skill: { Person_idUser: @skill.Person_idUser, howVerified: @skill.howVerified, idSkills: @skill.idSkills, skillLevel: @skill.skillLevel, skillName: @skill.skillName, verified: @skill.verified }
     assert_redirected_to skill_path(assigns(:skill))
   end
 
-  test "should destroy skill" do
+  test 'should destroy skill' do
     assert_difference('Skill.count', -1) do
       delete :destroy, id: @skill
     end
