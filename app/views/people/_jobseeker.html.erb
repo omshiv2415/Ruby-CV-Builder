@@ -1,26 +1,39 @@
 <div class="page-header">
 <div class="contextual">
+<div class="panel panel-default">
+<div class="panel-heading">Search Job Seeker</div>
 
-</div>
+ <div class="panel-body">
   <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-4">
     <div class="input-group">
       <%= form_tag(people_path, :method => "get") do %>
       <%= text_field_tag :search_skill, params[:search_skill], class: "form-control", placeholder: "Search by Skill" %>
       <span class="input-group-btn">
         <br/>
-        <%= submit_tag "Search", class: 'btn btn-default' %>
+        <%= submit_tag "Search", class: 'btn btn-primary' %>
       </span>
       <% end %>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
-    <div class="col-lg-6">
+    <div class="col-lg-4">
     <div class="input-group">
       <%= form_tag(people_path, :method => "get") do %>
       <%= text_field_tag :search_exp, params[:search_exp], class: "form-control", placeholder: "Search by Job title" %>
       <span class="input-group-btn">
         <br/>
-        <%= submit_tag "Search", class: 'btn btn-default' %>
+        <%= submit_tag "Search", class: 'btn btn-primary' %>
+      </span>
+      <% end %>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+    <div class="col-lg-4">
+    <div class="input-group">
+      <%= form_tag(people_path, :method => "get") do %>
+      <%= text_field_tag :search_edu, params[:search_edu], class: "form-control", placeholder: "Search by Degree...BSc" %>
+      <span class="input-group-btn">
+        <br/>
+        <%= submit_tag "Search", class: 'btn btn-primary' %>
       </span>
       <% end %>
     </div><!-- /input-group -->
@@ -56,5 +69,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 <br>
 <%= link_to 'Back', root_path %>

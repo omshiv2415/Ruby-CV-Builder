@@ -5,7 +5,7 @@ one:
   Persons_idUser: 1
   qualificationType: MyString
   courseName: MyString
-  EducationalLevels_idEducationLevel: 
+  EducationalLevels_idEducationLevel:
   vocational: MyString
   mainSubject: MyString
   nameOfInstitutions: MyString
@@ -17,11 +17,11 @@ one:
   howVerified: MyString
 
 two:
-  idEducationalQualification: 1
-  Persons_idUser: 1
+  idEducationalQualification: 2
+  Persons_idUser: 2
   qualificationType: MyString
   courseName: MyString
-  EducationalLevels_idEducationLevel: 
+  EducationalLevels_idEducationLevel:
   vocational: MyString
   mainSubject: MyString
   nameOfInstitutions: MyString
