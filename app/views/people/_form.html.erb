@@ -46,7 +46,6 @@
  </div>
  </div>
 </div>
-
    <div class="panel panel-info">
      <div class="panel-heading">
      <h5 align="left">Contact</h5>
@@ -135,6 +134,7 @@
         <%= f.select :noOfGcses, options_for_select([['1'],['2'],['3'],['4'],['5'],['6'],['7'],['8'],['9'],['10'],['11']],
         params[:noOfGcses]),{},{ class: "form-control"} %>
          <br/>
+         <%= f.label :Gcse_English_Grade,"GCSE English Grade" %><br>
          <%= f.select :gecseEnglishGrade, options_for_select([['A*'],['A'],['B'],['C'],['D'],['E'],
                    ['F'],['G'],['U'],['AA*'],['AA'],['BB'],['CC'],['DD'],['EE'],
                    ['FF']], params[:gecseEnglishGrade]),{},{ class: "form-control"} %>

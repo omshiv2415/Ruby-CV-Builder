@@ -137,13 +137,11 @@
         params[:noOfGcses]),{},{ class: "form-control"} %>
          <br/>
         <%= f.label :Gcse_English_Grade,"GCSE English Grade" %><br>
-
         <%= f.select :gecseEnglishGrade, options_for_select([['A*'],['A'],['B'],['C'],['D'],['E'],
                    ['F'],['G'],['U'],['AA*'],['AA'],['BB'],['CC'],['DD'],['EE'],
                    ['FF']], params[:gecseEnglishGrade]),{},{ class: "form-control"} %>
          <br/>
         <%= f.label :Gcse_Maths_Grade,"GCSE Maths Grade" %><br>
-
         <%= f.select :gcseMathsGrade, options_for_select([['A*'],['A'],['B'],['C'],['D'],['E'],
                    ['F'],['G'],['U'],['AA*'],['AA'],['BB'],['CC'],['DD'],['EE'],
                    ['FF']], params[:gcseMathsGrade]),{},{ class: "form-control"} %>

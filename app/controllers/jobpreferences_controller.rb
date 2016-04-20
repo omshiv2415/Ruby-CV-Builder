@@ -22,7 +22,7 @@ class JobpreferencesController < ApplicationController
 
   # GET /jobpreferences/new
   def new
-    if current_user.jobpreference.count < 2
+    if current_user.jobpreference.count < 3
       @jobpreference = Jobpreference.new
     else
       flash[:danger] = 'You can add only two Job Preferences'

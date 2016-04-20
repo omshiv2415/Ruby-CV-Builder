@@ -18,6 +18,7 @@ class PeopleController < ApplicationController
         # @people = Person.select("*").joins(:skill).where('skills.skillName LIKE ?', "%#{params[:search_skill]}%")
         @people = Person.select('*').search(params[:search_skill])
 
+
       else
         @people = Person.order('created_at DESC')
       end
@@ -57,6 +58,7 @@ class PeopleController < ApplicationController
     else
       redirect_to edit_person_path(current_user.people.first)
     end
+
   end
 
   # GET /people/1/edit
