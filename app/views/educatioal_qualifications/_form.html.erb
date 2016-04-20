@@ -35,9 +35,11 @@
     { class: 'form-control', data: { attribute: "value" } }) %>
   </div>
   <div class="form-group">
-    <%= f.label :yearObtained, "Year of Obtained"%><br>
-    <%= f.date_select :yearObtained, :start_year => Time.now.year - 1, :end_year => Time.now.year - 90, :order =>
+    <%= f.label :yearObtained, "Year of Obtained or Expected "%><br>
+    <%= f.date_select :yearObtained, :start_year => Time.now.year + 3, :end_year => Time.now.year - 90, :order =>
      [:month, :year], class: 'date-select' %>
+
+
   </div>
    <div class="form-group">
     <%= f.label :result, "Result" %><br>
