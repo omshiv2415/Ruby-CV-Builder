@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
         @people = Person.all.select('*').joins(:experience)
                         .where('experiences.other_jobtitle LIKE ?', "%#{params[:search_exp]}%")
       elsif params.key?(:search_skill)
-        # @people = Person.select("*").joins(:skill).where('skills.skillName LIKE ?', "%#{params[:search_skill]}%")
+
         @people = Person.select('*').search(params[:search_skill])
 
 

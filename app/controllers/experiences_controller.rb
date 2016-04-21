@@ -84,7 +84,9 @@ class ExperiencesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def experience_params
-    params.require(:experience).permit(:idExperiences, :Persons_idUser, :dateStarted, :dateFinished, :JobTitles_idJobTitles, :other_jobtitle, :keyDuties, :EmploymentLevels_idLevelsOfEmployment, :employerName, :verified, :howVerified)
+    params.require(:experience).permit(:idExperiences, :Persons_idUser, :dateStarted, :dateFinished,
+      :JobTitles_idJobTitles, :other_jobtitle, :keyDuties, :EmploymentLevels_idLevelsOfEmployment, :employerName,
+      :verified, :howVerified)
   end
 
   def require_same_user
