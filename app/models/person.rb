@@ -51,7 +51,7 @@ class Person < ActiveRecord::Base
 
   def self.search(search_skill)
     if search_skill
-      joins(:skill).where('skills.skillname ilike ?', "%#{search_skill}%")
+      joins(:skill).where('skills.skillName like ?', "%#{search_skill}%")
     else
       find(:all)
     end
