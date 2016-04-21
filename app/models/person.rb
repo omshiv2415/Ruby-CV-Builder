@@ -51,7 +51,7 @@ class Person < ActiveRecord::Base
 
   def self.search(search_skill)
     if search_skill
-      joins(:experience).where('lower(experiences.updated_at) like ?', "%#{search_skill}%")
+      joins(:experience).where('lower(experiences.user_id) like ?', "%#{search_skill}%")
     else
       find(:all)
     end
