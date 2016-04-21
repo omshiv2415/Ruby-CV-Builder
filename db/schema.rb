@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421201406) do
+ActiveRecord::Schema.define(version: 20160421231404) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 20160421201406) do
     t.string   "contactPreference"
     t.integer  "EducationalLevels_idEducatonLevel"
     t.integer  "noOfGcses"
-    t.string   "gecseEnglishGrade",                 limit: 2
-    t.string   "gcseMathsGrade",                    limit: 2
+    t.string   "gecseEnglishGrade",                 limit: 4
+    t.string   "gcseMathsGrade",                    limit: 4
     t.integer  "fiveOrMoreGcses",                   limit: 2
     t.integer  "noOfAlevels",                       limit: 4
     t.integer  "ucasPoints",                        limit: 4
