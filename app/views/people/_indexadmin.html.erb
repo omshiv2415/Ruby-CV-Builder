@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -101,7 +99,7 @@
          <h5 class="my-caption my-venture">Education</h5>
        <% @educatioal_qualifications.each do |qualification| %>
        <h5 class="my-venture"> </h5>
-       <h4 class="my-activity"> <%= qualification.qualificationType %> in <%= qualification.courseName %>
+       <h4 class="my-activity"> <%= qualification.qualification_type %> in <%= qualification.courseName %>
        (<%= qualification.result %>) </h4>
        <h4 class="my-activity"> <%= qualification.mainSubject %></h4>
        <h4 class="my-activity">Level <%= qualification.EducationalLevels_idEducationLevel %></h4>
@@ -126,7 +124,7 @@
          <% @skills.each do |skill| %>
             <tr>
               <td colspan="1"><%= skill.skillType %></td>
-              <td colspan="1"><%= skill.skillName %></td>
+              <td colspan="1"><%= skill.skill_name %></td>
               <td colspan="1"><%= progress_bar skill.skillLevel.to_f * 100/1000, alternative: 'success' %></td>
             </tr>
           <% end %>
@@ -139,7 +137,7 @@
           <h5 class="my-caption my-venture">Employment</h5>
           <% @experiences.each do |experience| %>
 
-					<h4 class="my-activity"><%= experience.otherJobTitle %></h4>
+					<h4 class="my-activity"><%= experience.other_jobtitle %></h4>
 					<h5 class="my-venture"><%= experience.employerName %></h5>
           <h5  class="my-venture"> Start <span> <%= experience.dateStarted.strftime("%b %Y") %>  </span></h5>
           <h5 class="my-venture"> Finish <span> <%= experience.dateFinished.strftime("%b %Y") %>  </span></h5>
