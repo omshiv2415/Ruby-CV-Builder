@@ -4,8 +4,8 @@ class EducatioalQualification < ActiveRecord::Base
   accepts_nested_attributes_for :user, :educatioal_qualification
   validates :qualification_type, presence: true, length: { minimum: 1, maximum: 15 }
   validates :courseName, presence: true, length: { minimum: 1, maximum: 70 }
-  validates :courseName, uniqueness: { case_sensitive: false }
-  validates_uniqueness_of :courseName, scope: :user_id
+  #validates :courseName, uniqueness: { case_sensitive: false }
+  #validates_uniqueness_of :courseName, scope: :user_id
   validates :EducationalLevels_idEducationLevel, presence: true, length: { minimum: 1, maximum: 15 }
   validates :nameOfInstitutions, presence: true, length: { minimum: 1, maximum: 75 }
   validates :mainSubject, presence: true, length: { minimum: 1, maximum: 50 }
