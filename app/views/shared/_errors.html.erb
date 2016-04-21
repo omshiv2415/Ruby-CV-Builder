@@ -4,9 +4,9 @@
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h2 class="panel-title">
-     <%= pluralize(obj.errors.count, "error") %>
-     Please check the following missing fields:
-     </h2>
+           <%= pluralize(obj.errors.count, "error") %>
+           Please check the following missing fields:
+      </h2>
 <div class="panel-body">
     <ul>
         <% obj.errors.full_messages.each do |msg| %>
