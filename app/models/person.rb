@@ -9,7 +9,6 @@ class Person < ActiveRecord::Base
   accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience, :referee, :jobpreferences
 
   validates :title, presence: true, length: { minimum: 1, maximum: 15 }
-
   validates :forename1, presence: true, length: { minimum: 1, maximum: 70 }
   validates :forename2, presence: true, length: { minimum: 1, maximum: 15 }
   validates :surname, presence: true, length: { minimum: 1, maximum: 15 }
@@ -52,9 +51,7 @@ class Person < ActiveRecord::Base
 
   def self.search(search_skill)
     if search_skill
-      joins(:skill).where('LOWER(skills.skillName) LIKE ?', "%#{search_skill.downcase}%")
-     # where("LOWER(title) LIKE ? OR LOWER(description) LIKE ?", "%#{search.downcase}%", "%#{search.downcase}%")
-    # joins(:owner).where('dogs.name LIKE ? or owners.name LIKE ?', "%#{search}%", "%#{search}%")
+      joins(:skill).where('lower(skills.skillName) like ?', "%#{search_skill}%")
     else
       find(:all)
     end
