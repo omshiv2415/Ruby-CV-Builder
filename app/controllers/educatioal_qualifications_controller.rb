@@ -83,7 +83,7 @@ class EducatioalQualificationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def educatioal_qualification_params
-    params.require(:educatioal_qualification).permit(:idEducationalQualification, :Persons_idUser, :qualificationType, :courseName, :EducationalLevels_idEducationLevel, :vocational, :mainSubject, :nameOfInstitutions, :country, :yearObtained, :result, :thesesTitle, :verified, :howVerified)
+    params.require(:educatioal_qualification).permit(:idEducationalQualification, :Persons_idUser, :qualification_type, :courseName, :EducationalLevels_idEducationLevel, :vocational, :mainSubject, :nameOfInstitutions, :country, :yearObtained, :result, :thesesTitle, :verified, :howVerified)
   end
 
   def require_same_user

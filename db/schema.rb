@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413020313) do
+ActiveRecord::Schema.define(version: 20160421201406) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
     t.integer  "Persons_idUser"
-    t.string   "qualificationType",                  limit: 16
+    t.string   "qualification_type",                 limit: 16
     t.string   "courseName",                         limit: 100
     t.integer  "EducationalLevels_idEducationLevel", limit: 3
     t.string   "vocational",                         limit: 1
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160413020313) do
     t.date     "dateStarted"
     t.date     "dateFinished"
     t.integer  "JobTitles_idJobTitles",                 limit: 6
-    t.string   "otherJobTitle",                         limit: 45
+    t.string   "other_jobtitle",                        limit: 45
     t.string   "keyDuties",                             limit: 255
     t.integer  "EmploymentLevels_idLevelsOfEmployment", limit: 4
     t.string   "employerName",                          limit: 45
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 20160413020313) do
   create_table "skills", force: :cascade do |t|
     t.integer  "idSkills"
     t.integer  "Person_idUser"
-    t.string   "skillName",     limit: 100
+    t.string   "skill_name",    limit: 100
     t.string   "skillLevel"
     t.integer  "verified",      limit: 1
     t.string   "howVerified",   limit: 45
