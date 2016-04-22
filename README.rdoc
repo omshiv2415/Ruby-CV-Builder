@@ -29,6 +29,7 @@ Step 4. To run the Project
    command Name:        rails s -b 0.0.0.0
    press from tool bar: Preview
 
+Step 4. Setup Tutorial (Optional)
 
   Video Tutorial for Setup Envirnment: xxx.xxxxx.xxx (Link comming soon)
   Video Tutorial for Use: xxx.xxxxx.xxx (Link coming soon)
