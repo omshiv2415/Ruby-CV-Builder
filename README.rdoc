@@ -27,7 +27,7 @@ Step 3. After installl all bundle
 Step 4. To run the Project
 
    command Name:        rails s -b 0.0.0.0
-   press from tool bar: Preview
+   press from toolbar: Preview
 
 Step 4. Setup Tutorial (Optional)
 
