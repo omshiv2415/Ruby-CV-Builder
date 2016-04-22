@@ -26,4 +26,5 @@ Register yourself as user and fill up the information to create a CV. Once you f
 Please feel free to contact me on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
         Website Link :
         <tt>https://ruby-cv-builder.herokuapp.com/</tt>.
+        https://ruby-cv-builder.herokuapp.com/
 
