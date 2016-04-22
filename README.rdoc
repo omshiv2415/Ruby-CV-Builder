@@ -16,7 +16,7 @@ Step 1. Setup Ruby on Rails Developmemnt Envirnment
 
    command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
 
-Step 2. After Clone the git type following
+Step 2. After Cloning the git type following
 
    command Name: bundle install
 
@@ -39,4 +39,5 @@ Register your self as user and fill up the information to create a CV. Once you 
 relvent infromation. You can download your CV.
 
 Please feel free to contact on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
-<tt>https://ruby-cv-builder.herokuapp.com/</tt>.
+
+Website Link : <tt>https://ruby-cv-builder.herokuapp.com/</tt>.
