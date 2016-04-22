@@ -1,9 +1,28 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RUBY CV BUILDER INSTALLATION
 
-Things you may want to cover:
+This project can be clone from GitHub by copy following link
+
+git@github.com:omshiv2415/Ruby-CV-Builder.git
+
+1. Copy the above link to Ruby IDE Command Line
+I will recommend if you want user online IDE it will easy to implement the project and
+it is free here is the liknk you can register
+
+-> clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
+
+2. After Clone the git
+
+-> bundle install
+
+3. After installl all bundle
+
+-> rake db:migrate
+
+4. To run the Project
+
+-> rails s -b 0.0.0.0
 
 * Ruby version
 
@@ -15,13 +34,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
