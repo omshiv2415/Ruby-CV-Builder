@@ -13,7 +13,7 @@ This project can be clone from GitHub by copy following link
    Register and setup envirnment for Ruby on Rails Development after that clone the
    following repository
 
--> clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
+command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
 
 2. After Clone the git type following
 
@@ -25,8 +25,8 @@ command Name:  rake db:migrate
 
 4. To run the Project
 
-command Name:  rails s -b 0.0.0.0
-press from tool bar      :Preview
+command Name:        rails s -b 0.0.0.0
+press from tool bar: Preview
 
 Register your self as user and fill up the information to create a CV. Once you fill up the
 relvent infromation. You can download your CV.
