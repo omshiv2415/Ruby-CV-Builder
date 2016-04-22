@@ -6,8 +6,9 @@ RUBY CV BUILDER INSTALLATION
 Step 1. Setup Ruby on Rails Development Environment
         You can setup the ruby on rails environment depends on the operating system but
         I will recommend if you want use online IDE it will easy to implement the project and
-        it is free. here is the link you can register
-        [Absolute README link]([Absolute README link](https://github.com/username/repo/blob/branch/docs/more_words.md))
+        it is free.
+
+Here is the link you can register https://www.nitrous.io/
 
         Register and setup environment for Ruby on Rails Development after that clone the
         Following repository
