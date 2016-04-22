@@ -8,7 +8,7 @@ Step 1. Setup Ruby on Rails Development Environment
         I will recommend if you want use online IDE it will easy to implement the project and
         it is free.
 
-Here is the link you can register https://www.nitrous.io/
+Here is the link you can register https://www.nitrous.io
 
         Register and setup environment for Ruby on Rails Development after that clone the
         Following repository
