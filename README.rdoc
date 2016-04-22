@@ -18,16 +18,16 @@ Step 1. Setup Ruby on Rails Developmemnt Envirnment
 
 Step 2. After Clone the git type following
 
-command Name: bundle install
+   command Name: bundle install
 
 Step 3. After installl all bundle
 
-command Name:  rake db:migrate
+   command Name:  rake db:migrate
 
 Step 4. To run the Project
 
-command Name:        rails s -b 0.0.0.0
-press from tool bar: Preview
+   command Name:        rails s -b 0.0.0.0
+   press from tool bar: Preview
 
 
   Video Tutorial for Setup Envirnment: xxx.xxxxx.xxx (Link comming soon)
