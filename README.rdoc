@@ -5,7 +5,7 @@ RUBY CV BUILDER INSTALLATION
 This project can be clone from GitHub by copy following link
 
 
-1. Setup Ruby on Rails Developmemnt Envirnment
+Step 1. Setup Ruby on Rails Developmemnt Envirnment
    You can setup the ruby on rails envirnment depends on the operatin system but
    I will recommend if you want use online IDE it will easy to implement the project and
    it is free. here is the liknk you can register https://www.nitrous.io/
@@ -15,21 +15,26 @@ This project can be clone from GitHub by copy following link
 
 command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
 
-2. After Clone the git type following
+Step 2. After Clone the git type following
 
 command Name: bundle install
 
-3. After installl all bundle
+Step 3. After installl all bundle
 
 command Name:  rake db:migrate
 
-4. To run the Project
+Step 4. To run the Project
 
 command Name:        rails s -b 0.0.0.0
 press from tool bar: Preview
+
+
+Video Tutorial for Setup Envirnment: xxx.xxxxx.xxx (Link comming soon)
+Video Tutorial for Use: xxx.xxxxx.xxx (Link comming soon)
+
 
 Register your self as user and fill up the information to create a CV. Once you fill up the
 relvent infromation. You can download your CV.
 
 Please feel free to contact on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
-<tt>rake doc:app</tt>.
+<tt>https://ruby-cv-builder.herokuapp.com/</tt>.
