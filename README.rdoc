@@ -41,3 +41,31 @@ relvent infromation. You can download your CV.
 Please feel free to contact me on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
 
 Website Link : <tt>https://ruby-cv-builder.herokuapp.com/</tt>.
+
+== README
+
+RUBY CV BUILDER INSTALLATION
+This project can be clone from GitHub by copy following link
+Step 1. Setup Ruby on Rails Development Environment
+        You can setup the ruby on rails environment depends on the operating system but
+        I will recommend if you want use online IDE it will easy to implement the project and
+        it is free. here is the link you can register https://www.nitrous.io/
+
+        Register and setup environment for Ruby on Rails Development after that clone the
+        Following repository
+
+        Command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
+Step 2. After Cloning the git type following
+        Command Name: bundle install
+Step 3. After installl all bundle
+        Command Name:  rake db:migrate
+Step 4. To run the Project
+        Command Name:        rails s -b 0.0.0.0
+        Press from tool bar: Preview
+Step 5. Setup Tutorial (Optional)
+        Video Tutorial for Setup Environment: xxx.xxxxx.xxx (Link comming soon)
+        Video Tutorial for Use: xxx.xxxxx.xxx (Link coming soon)
+Register yourself as user and fill up the information to create a CV. Once you fill up the relent information. You can download your CV.
+Please feel free to contact me on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
+        Website Link: ruby-cv-builder.herokuapp.com/.
+
