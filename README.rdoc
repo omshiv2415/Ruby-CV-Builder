@@ -14,7 +14,7 @@ Step 1. Setup Ruby on Rails Development Environment
         Command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
 Step 2. After Cloning the git type following
         Command Name: bundle install
-Step 3. After installl all bundle
+Step 3. After install bundle
         Command Name:  rake db:migrate
 Step 4. To run the Project
         Command Name:        rails s -b 0.0.0.0
