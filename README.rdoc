@@ -38,6 +38,6 @@ Step 4. Setup Tutorial (Optional)
 Register your self as user and fill up the information to create a CV. Once you fill up the
 relvent infromation. You can download your CV.
 
-Please feel free to contact on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
+Please feel free to contact me on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
 
 Website Link : <tt>https://ruby-cv-builder.herokuapp.com/</tt>.
