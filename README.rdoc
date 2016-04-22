@@ -2,7 +2,7 @@
 == README
 
 RUBY CV BUILDER INSTALLATION
-This project can be clone from GitHub by copy following link
+
 Step 1. Setup Ruby on Rails Development Environment
         You can setup the ruby on rails environment depends on the operating system but
         I will recommend if you want use online IDE it will easy to implement the project and
