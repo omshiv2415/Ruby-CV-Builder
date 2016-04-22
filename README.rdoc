@@ -6,6 +6,7 @@ This project can be clone from GitHub by copy following link
 
 
 Step 1. Setup Ruby on Rails Developmemnt Envirnment
+
    You can setup the ruby on rails envirnment depends on the operatin system but
    I will recommend if you want use online IDE it will easy to implement the project and
    it is free. here is the liknk you can register https://www.nitrous.io/
@@ -13,7 +14,7 @@ Step 1. Setup Ruby on Rails Developmemnt Envirnment
    Register and setup envirnment for Ruby on Rails Development after that clone the
    following repository
 
-command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
+   command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
 
 Step 2. After Clone the git type following
 
@@ -29,8 +30,8 @@ command Name:        rails s -b 0.0.0.0
 press from tool bar: Preview
 
 
-Video Tutorial for Setup Envirnment: xxx.xxxxx.xxx (Link comming soon)
-Video Tutorial for Use: xxx.xxxxx.xxx (Link comming soon)
+  Video Tutorial for Setup Envirnment: xxx.xxxxx.xxx (Link comming soon)
+  Video Tutorial for Use: xxx.xxxxx.xxx (Link coming soon)
 
 
 Register your self as user and fill up the information to create a CV. Once you fill up the
