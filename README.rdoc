@@ -11,7 +11,7 @@ Step 1. Setup Ruby on Rails Development Environment
         Register and setup environment for Ruby on Rails Development after that clone the
         Following repository
 
-        Command Name:  clone git git@github.com:omshiv2415/Ruby-CV-Builder.git
+        Command Name: git clone git@github.com:omshiv2415/Ruby-CV-Builder.git
 Step 2. After Cloning the git type following
         Command Name: bundle install
 Step 3. After install bundle
