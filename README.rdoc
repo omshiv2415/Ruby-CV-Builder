@@ -23,7 +23,8 @@ Step 4. To run the Project
         Command Name:        rails s -b 0.0.0.0
         Press from tool bar: Preview
 Step 5. Setup Tutorial (Optional)
-        Video Tutorial for Setup Environment and demo: https://youtu.be/stNG2o-1zOc 
+
+Video Tutorial for Setup Environment and demo: https://youtu.be/stNG2o-1zOc 
         
 Register yourself as user and fill up the information to create a CV. Once you fill up the relent information. You can download your CV.
 Please feel free to contact me on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
