@@ -25,6 +25,7 @@ Step 4. To run the Project
 Step 5. Setup Tutorial (Optional)
 
 Setup Environment: https://youtu.be/rLzdG_Bn_lE 
+
 Ruby CV Builder Demo: https://youtu.be/YAYXOUOQ8ZE
 
 Register yourself as user and fill up the information to create a CV. Once you fill up the relevent information. You can download your CV.
