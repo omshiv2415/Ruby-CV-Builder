@@ -6,7 +6,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'bootstrap_progressbar'
 gem 'country_select'
-
+gem "kpi"
 gem 'rails', '4.2.5.1'
 gem 'wicked_pdf'
 gem 'rmagick'

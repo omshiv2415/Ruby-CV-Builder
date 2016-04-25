@@ -105,6 +105,9 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    kpi (0.7.1)
+      actionmailer (>= 2.3)
+      activesupport (>= 2.3)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.7.1)
@@ -252,6 +255,7 @@ DEPENDENCIES
   devise-bootstrap-views
   jbuilder (~> 2.0)
   jquery-rails
+  kpi
   mini_magick
   paperclip (~> 4.3)
   pg
