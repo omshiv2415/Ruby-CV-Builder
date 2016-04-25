@@ -11,7 +11,7 @@ class EducatioalQualification < ActiveRecord::Base
   validates :mainSubject, presence: true, length: { minimum: 1, maximum: 50 }
   validates :country, presence: true, length: { minimum: 1, maximum: 50 }
   validates :yearObtained, presence: true, length: { minimum: 1, maximum: 15 }
-  validates :result, presence: true, length: { minimum: 1, maximum: 25 }
+  validates :result, presence: true, length: { minimum: 1, maximum: 45 }
   validates :thesesTitle, presence: true, length: { minimum: 1, maximum: 50 }
   before_save :user_setup
 

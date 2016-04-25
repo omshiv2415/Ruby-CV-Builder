@@ -19,7 +19,7 @@ class Person < ActiveRecord::Base
   validates :secondEmail, presence: true, length: { minimum: 1, maximum: 51 }
   validates :personalUrl, presence: true, length: { minimum: 1, maximum: 50 }
   validates :female, presence: true, length: { minimum: 1, maximum: 15 }
-  validates :authorityToWorkStatement, presence: true, length: { minimum: 1, maximum: 1750 }
+  validates :authorityToWorkStatement, presence: true, length: { minimum: 1, maximum: 2750 }
   validates :contactPreference, presence: true, length: { minimum: 1, maximum: 15 }
   validates :noOfGcses, presence: true, length: { minimum: 1, maximum: 15 }
   validates :gecseEnglishGrade, presence: true, length: { minimum: 1, maximum: 50 }
