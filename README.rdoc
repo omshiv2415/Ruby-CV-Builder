@@ -24,7 +24,7 @@ Step 4. To run the Project
         Press from tool bar: Preview
 Step 5. Setup Tutorial (Optional)
 
-Video Tutorial for Setup Environment and demo: https://youtu.be/stNG2o-1zOc 
+Video Tutorial for Setup Environment and demo: https://youtu.be/rLzdG_Bn_lE 
         
 Register yourself as user and fill up the information to create a CV. Once you fill up the relevent information. You can download your CV.
 Please feel free to contact me on omshiv2415@yahoo.co.uk if you need any assistance to setup the project.
