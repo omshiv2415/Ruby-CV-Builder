@@ -9,8 +9,8 @@ class PeopleController < ApplicationController
   def index
     if current_user.try(:admin?)
       if params.key?(:search_edu)
-        @people = Person.all.select('*').joins(:educatioal_qualification)
-                        .where('educatioal_qualifications.qualification_type LIKE ?', "%#{params[:search_edu]}%")
+        @people = Person.all.select('*').joins(:educatioal_qualification.downcase)
+                        .where('educatioal_qualifications.qualification_type LIKE ?', "%#{params[:search_edu.downcase]}%")
       elsif params.key?(:search_exp)
         @people = Person.all.select('*').joins(:experience)
                         .where('experiences.other_jobtitle LIKE ?', "%#{params[:search_exp]}%")
