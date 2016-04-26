@@ -8,18 +8,15 @@ class PeopleController < ApplicationController
 
   def index
     if current_user.try(:admin?)
-      if params.key?(:search_edu).blank?
-        flash[:notice] = "your search criteria is invalid. Please try using valid keywords"
-         #render 'index'
-        else
+      if params.key?(:search_edu)
+       # lower(skills.skill_name) LIKE ?'
         @people = Person.all.select('*').joins(:educatioal_qualification)
                         .where('lower(educatioal_qualifications.qualification_type) LIKE ?', "%#{params[:search_edu.downcase]}%")
-      end
-
       elsif params.key?(:search_exp)
         @people = Person.all.select('*').joins(:experience)
-                        .where('lower(experiences.other_jobtitle) LIKE ?', "%#{params[:search_exp.downcase]}%")
+                        .where('lower(experiences.other_jobtitle) LIKE ?', "%#{params[:search_exp.d]}%")
       elsif params.key?(:search_skill)
+
         @people = Person.select('*').search(params[:search_skill])
 
 
