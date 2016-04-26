@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421231404) do
+ActiveRecord::Schema.define(version: 20160426085009) do
 
   create_table "educatioal_qualifications", force: :cascade do |t|
     t.integer  "idEducationalQualification"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20160421231404) do
     t.string   "email",               limit: 50
     t.string   "contactPhone",        limit: 16
     t.string   "relationship",        limit: 50
-    t.integer  "permissionToContact", limit: 1
+    t.string   "permissionToContact", limit: 14
     t.integer  "verified",            limit: 1
     t.string   "howVerified",         limit: 45
     t.string   "referenceDoc"
