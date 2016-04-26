@@ -7,9 +7,7 @@ class Person < ActiveRecord::Base
   has_many :jobpreferences
 
   accepts_nested_attributes_for :user, :educatioal_qualification, :skill, :experience, :referee, :jobpreferences
-  validates :search_skill, presence: true, length: { minimum: 1, maximum: 15 }
-  validates :search_exp, presence: true, length: { minimum: 1, maximum: 15 }
-  validates :search_edu, presence: true, length: { minimum: 1, maximum: 15 }
+
   validates :title, presence: true, length: { minimum: 1, maximum: 15 }
   validates :forename1, presence: true, length: { minimum: 1, maximum: 70 }
   validates :forename2, presence: true, length: { minimum: 1, maximum: 15 }
